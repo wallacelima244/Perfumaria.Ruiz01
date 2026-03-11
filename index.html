@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rodrigues Gomes Perfumes</title>
+  <meta
+    name="description"
+    content="Perfumes importados e árabes com carrinho e finalização no WhatsApp."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#topo" class="brand">
+        <div class="brand__logo">RG</div>
+        <div class="brand__info">
+          <span class="brand__name">Rodrigues Gomes Perfumes</span>
+          <span class="brand__sub">Importados e árabes • masculino e feminino</span>
+        </div>
+      </a>
+
+      <nav class="nav nav--desktop">
+        <a href="#topo">Início</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#" data-menu-category="Importado Masculino">Importado Masculino</a>
+        <a href="#" data-menu-category="Importado Feminino">Importado Feminino</a>
+        <a href="#" data-menu-category="Árabe Masculino">Árabe Masculino</a>
+        <a href="#" data-menu-category="Árabe Feminino">Árabe Feminino</a>
+        <button id="openCartBtn" class="cartTopBtn">
+          🛒 <span data-cart-count>0</span>
+        </button>
+      </nav>
+
+      <button id="menuBtn" class="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div id="mobileNav" class="mobileNav">
+      <div class="container mobileNav__content">
+        <a href="#topo">Início</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#" data-mobile-category="Importado Masculino">Importado Masculino</a>
+        <a href="#" data-mobile-category="Importado Feminino">Importado Feminino</a>
+        <a href="#" data-mobile-category="Árabe Masculino">Árabe Masculino</a>
+        <a href="#" data-mobile-category="Árabe Feminino">Árabe Feminino</a>
+        <button id="openCartBtnMobile" class="mobileCartBtn">
+          Abrir carrinho (<span data-cart-count>0</span>)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="hero__dot"></span>
+            <span>Pedidos finalizados direto no WhatsApp</span>
+          </div>
+
+          <h1>Perfumes com presença, luxo e sofisticação.</h1>
+
+          <p class="hero__text">
+            Catálogo premium de perfumes importados e árabes, masculinos e femininos,
+            com visual moderno, ótima apresentação e compra simples para o cliente.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#catalogo" class="btn btn--gold">Ver catálogo</a>
+            <button id="heroCartBtn" class="btn btn--outline">Abrir carrinho</button>
+          </div>
+
+          <div class="hero__features">
+            <div class="hero__feature">Importados e árabes</div>
+            <div class="hero__feature">Masculino e feminino</div>
+            <div class="hero__feature">Catálogo com busca</div>
+            <div class="hero__feature">Finalização no WhatsApp</div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="heroCard">
+            <img
+              src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1200&q=80"
+              alt="Perfume premium"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalogo">
+      <div class="container">
+        <div class="sectionHead">
+          <span class="sectionMini">CATÁLOGO</span>
+          <h2>Nossos perfumes</h2>
+          <p>Busque pelo nome ou filtre por categoria.</p>
+        </div>
+
+        <div class="catalogTools">
+          <input
+            type="text"
+            id="searchInput"
+            class="searchInput"
+            placeholder="Buscar perfume..."
+          />
+        </div>
+
+        <div class="categories">
+          <button class="category-btn active" data-category="Todos">Todos</button>
+          <button class="category-btn" data-category="Importado Masculino">Importado Masculino</button>
+          <button class="category-btn" data-category="Importado Feminino">Importado Feminino</button>
+          <button class="category-btn" data-category="Árabe Masculino">Árabe Masculino</button>
+          <button class="category-btn" data-category="Árabe Feminino">Árabe Feminino</button>
+        </div>
+
+        <div id="productsGrid" class="products-grid"></div>
+      </div>
+    </section>
+
+    <section class="featured">
+      <div class="container">
+        <div class="sectionHead">
+          <span class="sectionMini">DESTAQUES</span>
+          <h2>Mais vendidos</h2>
+          <p>Produtos em evidência para chamar atenção do cliente.</p>
+        </div>
+
+        <div id="featuredGrid" class="products-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__content">
+      <div>
+        <h3>Rodrigues Gomes Perfumes</h3>
+        <p>Importados e árabes • atendimento premium</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="#catalogo">Catálogo</a>
+        <a href="https://www.instagram.com/rodriguesgp_gomes?igsh=MTMyZ2t3MXFyeG5ubg%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/5511972480984?text=Olá!%20Vim%20pelo%20site%20da%20Rodrigues%20Gomes%20Perfumes." target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="socialFloat">
+    <a
+      class="socialFloat__btn"
+      href="https://www.instagram.com/rodriguesgp_gomes?igsh=MTMyZ2t3MXFyeG5ubg%3D%3D&utm_source=qr"
+      target="_blank"
+      rel="noopener"
+      aria-label="Instagram"
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+        alt="Instagram"
+      />
+    </a>
+
+    <a
+      class="socialFloat__btn socialFloat__btn--whats"
+      href="https://wa.me/5511972480984?text=Olá!%20Vim%20pelo%20site%20da%20Rodrigues%20Gomes%20Perfumes."
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp"
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"
+      />
+    </a>
+  </div>
+
+  <div id="cartOverlay" class="cart-overlay"></div>
+
+  <aside id="cartSidebar" class="cart-sidebar" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Seu carrinho</h3>
+      <button id="closeCartBtn" class="close-cart">✕</button>
+    </div>
+
+    <div id="cartItems" class="cart-items">
+      <p class="empty-cart">Nenhum item adicionado ainda.</p>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+
+      <a
+        id="checkoutBtn"
+        class="checkout-btn"
+        href="https://wa.me/5511972480984"
+        target="_blank"
+        rel="noopener"
+      >
+        Finalizar no WhatsApp
+      </a>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast">Produto adicionado ao carrinho</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
