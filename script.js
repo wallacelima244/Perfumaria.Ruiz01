@@ -132,13 +132,13 @@ const products = [
   },
   {
     id: 12,
-    name: "Carolina Herrera 212 VIP Rosé Eau de Parfum",
+    name: "Carolina Herrera 212 VIP Black",
     volume: "100 ml",
     category: "Importados Femininos",
-    price: 419.0,
-    image: "img/perfume-12.jpg",
-    tag: "Importado Feminino",
-    description: "Fragrância glamourosa, feminina e moderna.",
+    price: 518.70,
+    image: "212.vip.black.jpeg",
+    tag: "Importado Masculino",
+    description: "Fragrância Marcante.",
     featured: false
   },
   {
@@ -344,74 +344,74 @@ const products = [
     name: "Dior Sauvage Eau de Parfum",
     volume: "100 ml",
     category: "Importados Masculinos",
-    price: 489.0,
-    image: "img/perfume-31.jpg",
+    price: 713.70,
+    image: "dior.sauvage.jpeg",
     tag: "Importado Masculino",
     description: "Fragrância de presença forte e elegante.",
     featured: true
   },
   {
     id: 32,
-    name: "Bleu de Chanel Eau de Parfum",
+    name: "Animale For Men ",
     volume: "100 ml",
     category: "Importados Masculinos",
-    price: 529.0,
-    image: "img/perfume-32.jpg",
+    price: 253.50,
+    image: "animale.jpeg",
     tag: "Luxo",
     description: "Sofisticado, refinado e extremamente versátil.",
     featured: true
   },
   {
     id: 33,
-    name: "Paco Rabanne Invictus Eau de Toilette",
+    name: "Paco Rabanne One Million Edt",
     volume: "100 ml",
     category: "Importados Masculinos",
-    price: 419.0,
-    image: "img/perfume-33.jpg",
+    price: 492.70,
+    image: "paco.rabenne.one.million.jpeg",
     tag: "Importado Masculino",
     description: "Moderno, vibrante e cheio de energia.",
     featured: false
   },
   {
     id: 34,
-    name: "Jean Paul Gaultier Le Male Eau de Toilette",
+    name: "Jean Paul Gaultier Le Male Parfum",
     volume: "125 ml",
     category: "Importados Masculinos",
-    price: 439.0,
-    image: "img/perfume-34.jpg",
+    price: 648.70,
+    image: "jean.paul.jpeg",
     tag: "Importado Masculino",
     description: "Clássico masculino marcante e elegante.",
     featured: false
   },
   {
     id: 35,
-    name: "Calvin Klein CK One",
-    volume: "100 ml",
+    name: "Calvin Klein BE",
+    volume: "200 ml",
     category: "Importados Masculinos",
-    price: 279.0,
-    image: "img/perfume-35.jpg",
+    price:336.70,
+    image: "calvin.jpeg",
     tag: "Importado Masculino",
     description: "Leve, fresco e perfeito para uso diário.",
     featured: false
   },
   {
     id: 36,
-    name: "Ferrari Black Eau de Toilette",
+    name: "Ferrari Black ",
     volume: "125 ml",
     category: "Importados Masculinos",
-    price: 239.0,
-    image: "img/perfume-36.jpg",
+    price: 253.50,
+    image: "ferrari.black.jpeg",
     tag: "Importado Masculino",
     description: "Fragrância acessível e muito conhecida.",
     featured: false
   },
   {
     id: 37,
-    name: "Dolce & Gabbana Light Blue Pour Homme",
-    volume: "125 ml",
+    name: "Prada Paradigme",
+    volume: "100 ml",
     category: "Importados Masculinos",
-    price: 429.0,
-    image: "img/perfume-37.jpg",
+    price: 882.70,
+    image: "prada.masc.jpeg",
     tag: "Importado Masculino",
     description: "Fresco, sofisticado e muito agradável.",
     featured: false
@@ -421,34 +421,144 @@ const products = [
     name: "Azzaro Pour Homme",
     volume: "100 ml",
     category: "Importados Masculinos",
-    price: 299.0,
-    image: "img/perfume-38.jpg",
+    price:317.20,
+    image: "azzaro.jpeg",
     tag: "Clássico",
     description: "Masculino clássico com personalidade forte.",
     featured: false
   },
   {
     id: 39,
-    name: "Valentino Uomo Born in Roma",
+    name: "Paco Rabanne Phantom",
     volume: "100 ml",
     category: "Importados Masculinos",
-    price: 489.0,
-    image: "img/perfume-39.jpg",
+    price: 570.70,
+    image: "phantom.jpeg",
     tag: "Premium",
     description: "Cheiro moderno, luxuoso e sedutor.",
     featured: false
   },
   {
     id: 40,
-    name: "Chanel Platinum Égoïste",
+    name: "Chanel Bleu Parfum",
     volume: "100 ml",
     category: "Importados Masculinos",
-    price: 519.0,
-    image: "img/perfume-40.jpg",
+    price: 1415.70,
+    image: "chanel.jpeg",
     tag: "Luxo",
     description: "Sofisticação clássica com assinatura forte.",
     featured: false
-  }
+    },
+    {
+  id: 41,
+  name: "Carolina Herrera CHHC Men",
+  volume: "100 ml",
+  category: "Importados Masculinos",
+  price: 531.70,
+  image: "chhc.jpeg",
+  tag: "Best Seller",
+  description: "Perfume marcante, sedutor e muito procurado.",
+  featured: true
+},
+{
+  id: 42,
+  name: "Dior Homme Intense ",
+  volume: "100 ml",
+  category: "Importados Masculinos",
+  price: 921.70,
+  image: "dior.intense.jpeg",
+  tag: "Importado Masculino",
+  description: "Fragrância moderna com presença forte e elegante.",
+  featured: false
+},
+{
+  id: 43,
+  name: "Rabanne Invictus EDT ",
+  volume: "100 ml",
+  category: "Importados Masculinos",
+  price: 492.70,
+  image: "invictus.jpeg",
+  tag: "Premium",
+  description: "Aroma sofisticado, refinado e noturno.",
+  featured: false
+},
+{
+  id: 44,
+  name: "Rayhaan Nocturno",
+  volume: "100 ml",
+  category: "Importados Masculinos",
+  price: 284.70,
+  image: "nocturno.jpeg",
+  tag: "Luxo",
+  description: "Marcante, elegante e noturno.",
+  featured: false
+},
+{
+  id: 45,
+  name: "Maison Alhambra No.2 Men",
+  volume: "80 ml",
+  category: "Importados Masculinos",
+  price: 206.70,
+  image: "maison.jpeg",
+  tag: "Importado Masculino",
+  description: "Perfume versátil, fresco e muito agradável.",
+  featured: false
+},
+{
+  id: 46,
+  name: "Maison Alhambra Salvo Elixir",
+  volume: "60 ml",
+  category: "Importados Masculinos",
+  price: 206.50,
+  image: "salvo.jpeg",
+  tag: "Clássico",
+  description: "Masculino elegante, equilibrado e muito popular.",
+  featured: false
+},
+{
+  id: 47,
+  name: "Maison Alhambra Panther",
+  volume: "100 ml",
+  category: "Importados Masculinos",
+  price: 206.70,
+  image: "panther.jpeg",
+  tag: "Destaque",
+  description: "Fragrância intensa, envolvente e cheia de personalidade.",
+  featured: false
+},
+{
+  id: 48,
+  name: "Carolina Herrera 212 Vip Black",
+  volume: "100 ml",
+  category: "Importados Masculinos",
+  price: 518.70,
+  image: "212.vip.black.jpeg",
+  tag: "Premium",
+  description: "Cheiro sofisticado, moderno e muito elogiado.",
+  featured: false
+},
+{
+  id: 49,
+  name: "Y Yves Saint Laurent Eau de Parfum",
+  volume: "100 ml",
+  category: "Importados Masculinos",
+  price: 519.0,
+  image: "img/perfume-48.jpg",
+  tag: "Premium",
+  description: "Cheiro sofisticado, moderno e muito elogiado.",
+  featured: false
+},
+{
+  id: 50,
+  name: "Y Yves Saint Laurent Eau de Parfum",
+  volume: "100 ml",
+  category: "Importados Masculinos",
+  price: 519.0,
+  image: "img/perfume-48.jpg",
+  tag: "Premium",
+  description: "Cheiro sofisticado, moderno e muito elogiado.",
+  featured: false
+}  
 ];
 
 let selectedCategory = "Todos";
@@ -575,11 +685,12 @@ function renderStaticSections() {
   const featured = products.filter((item) => item.featured).slice(0, 8);
   featuredGrid.innerHTML = featured.map(createProductCard).join("");
 
-  gridImportadosMasculinos.innerHTML = products
-    .filter((item) => item.category === "Importados Masculinos")
-    .slice(0, 8)
-    .map(createProductCard)
-    .join("");
+ gridImportadosMasculinos.innerHTML = products
+  .filter((item) => item.category === "Importados Masculinos")
+  .slice(0, 18)
+  .map(createProductCard)
+  .join("");
+
 
   gridImportadosFemininos.innerHTML = products
     .filter((item) => item.category === "Importados Femininos")
