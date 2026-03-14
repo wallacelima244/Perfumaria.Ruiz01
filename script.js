@@ -1,254 +1,493 @@
 const whatsappNumber = "5511972480984";
-const cartStorageKey = "rg-perfumes-cart";
+
+const categories = [
+  "Todos",
+  "Importados Femininos",
+  "Importados Masculinos",
+  "Árabes Femininos",
+  "Árabes Masculinos"
+];
 
 const products = [
   {
     id: 1,
-    name: "Dior Sauvage",
-    category: "Importado Masculino",
-    price: 479.9,
-    oldPrice: 529.9,
-    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=80",
-    tag: "Mais vendido",
-    description: "Importado masculino de presença forte, elegante e sofisticada."
+    name: "Lattafa Yara Eau de Parfum",
+    volume: "100 ml",
+    category: "Árabes Femininos",
+    price: 189.0,
+    image: "img/perfume-1.jpg",
+    tag: "Árabe Feminino",
+    description: "Fragrância doce e elegante com toque moderno e envolvente.",
+    featured: true
   },
   {
     id: 2,
-    name: "212 VIP Men",
-    category: "Importado Masculino",
-    price: 389.9,
-    oldPrice: 429.9,
-    image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=900&q=80",
-    tag: "Destaque",
-    description: "Aroma moderno, sedutor e cheio de personalidade."
+    name: "Lattafa Fakhar Rose Eau de Parfum",
+    volume: "100 ml",
+    category: "Árabes Femininos",
+    price: 199.0,
+    image: "img/perfume-2.jpg",
+    tag: "Árabe Feminino",
+    description: "Aroma floral sofisticado com identidade marcante.",
+    featured: false
   },
   {
     id: 3,
-    name: "Bleu de Chanel",
-    category: "Importado Masculino",
-    price: 529.9,
-    oldPrice: 589.9,
-    image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=80",
-    tag: "Premium",
-    description: "Fragrância refinada, intensa e moderna para homens de presença."
+    name: "Lattafa Yara Moi Eau de Parfum",
+    volume: "100 ml",
+    category: "Árabes Femininos",
+    price: 209.0,
+    image: "img/perfume-3.jpg",
+    tag: "Árabe Feminino",
+    description: "Perfume cremoso, refinado e cheio de presença.",
+    featured: false
   },
   {
     id: 4,
-    name: "Invictus",
-    category: "Importado Masculino",
-    price: 419.9,
-    oldPrice: 469.9,
-    image: "https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=900&q=80",
-    tag: "Sucesso",
-    description: "Perfume vibrante, marcante e ideal para quem quer destaque."
+    name: "Lattafa Badee Al Oud Amethyst",
+    volume: "100 ml",
+    category: "Árabes Femininos",
+    price: 229.0,
+    image: "img/perfume-4.jpg",
+    tag: "Luxo Árabe",
+    description: "Fragrância intensa, exótica e de alta fixação.",
+    featured: true
   },
   {
     id: 5,
-    name: "One Million",
-    category: "Importado Masculino",
-    price: 439.9,
-    oldPrice: 489.9,
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=80",
-    tag: "Luxo",
-    description: "Clássico sedutor com presença forte e sofisticada."
+    name: "Lattafa Victoria Eau de Parfum",
+    volume: "100 ml",
+    category: "Árabes Femininos",
+    price: 189.0,
+    image: "img/perfume-5.jpg",
+    tag: "Árabe Feminino",
+    description: "Aroma elegante para mulheres que gostam de sofisticação.",
+    featured: false
   },
   {
     id: 6,
-    name: "Acqua di Giò",
-    category: "Importado Masculino",
-    price: 459.9,
-    oldPrice: 509.9,
-    image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=80",
-    tag: "Clássico",
-    description: "Fresco, elegante e perfeito para o dia a dia."
+    name: "Lattafa Tharwah Gold Eau de Parfum",
+    volume: "100 ml",
+    category: "Árabes Femininos",
+    price: 239.0,
+    image: "img/perfume-6.jpg",
+    tag: "Destaque",
+    description: "Toque luxuoso com presença forte e refinada.",
+    featured: false
   },
   {
     id: 7,
-    name: "Good Girl",
-    category: "Importado Feminino",
-    price: 499.9,
-    oldPrice: 549.9,
-    image: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=900&q=80",
-    tag: "Mais vendido",
-    description: "Importado feminino marcante, sofisticado e perfeito para ocasiões especiais."
+    name: "Lattafa Petra Eau de Parfum",
+    volume: "100 ml",
+    category: "Árabes Femininos",
+    price: 199.0,
+    image: "img/perfume-7.jpg",
+    tag: "Árabe Feminino",
+    description: "Fragrância delicada e marcante ao mesmo tempo.",
+    featured: false
   },
   {
     id: 8,
-    name: "La Vie Est Belle",
-    category: "Importado Feminino",
-    price: 469.9,
-    oldPrice: 519.9,
-    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=80",
-    tag: "Elegante",
-    description: "Fragrância feminina doce, elegante e luxuosa."
+    name: "Lattafa Afeef Eau de Parfum",
+    volume: "100 ml",
+    category: "Árabes Femininos",
+    price: 209.0,
+    image: "img/perfume-8.jpg",
+    tag: "Árabe Feminino",
+    description: "Elegância oriental com acabamento luxuoso.",
+    featured: false
   },
   {
     id: 9,
-    name: "Scandal",
-    category: "Importado Feminino",
-    price: 459.9,
-    oldPrice: 509.9,
-    image: "https://images.unsplash.com/photo-1619994403073-2cec7b30c1b6?auto=format&fit=crop&w=900&q=80",
-    tag: "Sucesso",
-    description: "Perfume feminino intenso, doce e extremamente chamativo."
+    name: "Lattafa The Kingdom Eau de Parfum",
+    volume: "100 ml",
+    category: "Árabes Femininos",
+    price: 219.0,
+    image: "img/perfume-9.jpg",
+    tag: "Premium",
+    description: "Fragrância de personalidade forte e sofisticada.",
+    featured: false
   },
   {
     id: 10,
-    name: "Libre",
-    category: "Importado Feminino",
-    price: 489.9,
-    oldPrice: 539.9,
-    image: "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=900&q=80",
-    tag: "Refinado",
-    description: "Elegância moderna com sensualidade e presença."
+    name: "Lattafa Habik For Women Eau de Parfum",
+    volume: "100 ml",
+    category: "Árabes Femininos",
+    price: 199.0,
+    image: "img/perfume-10.jpg",
+    tag: "Árabe Feminino",
+    description: "Aroma feminino refinado, envolvente e moderno.",
+    featured: false
   },
   {
     id: 11,
-    name: "Idôle",
-    category: "Importado Feminino",
-    price: 429.9,
-    oldPrice: 469.9,
-    image: "https://images.unsplash.com/photo-1615634788081-5cb2f4c9cace?auto=format&fit=crop&w=900&q=80",
-    tag: "Delicado",
-    description: "Perfume feminino sofisticado, floral e elegante."
+    name: "Lancôme La Vie Est Belle Eau de Parfum",
+    volume: "100 ml",
+    category: "Importados Femininos",
+    price: 429.0,
+    image: "img/perfume-11.jpg",
+    tag: "Importado Feminino",
+    description: "Doce elegante com baunilha e íris, muito popular.",
+    featured: true
   },
   {
     id: 12,
-    name: "J'adore",
-    category: "Importado Feminino",
-    price: 519.9,
-    oldPrice: 579.9,
-    image: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&w=900&q=80",
-    tag: "Luxo",
-    description: "Clássico feminino de alta elegância e feminilidade."
+    name: "Carolina Herrera 212 VIP Rosé Eau de Parfum",
+    volume: "100 ml",
+    category: "Importados Femininos",
+    price: 419.0,
+    image: "img/perfume-12.jpg",
+    tag: "Importado Feminino",
+    description: "Fragrância glamourosa, feminina e moderna.",
+    featured: false
   },
   {
     id: 13,
-    name: "Asad",
-    category: "Árabe Masculino",
-    price: 199.9,
-    oldPrice: 229.9,
-    image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59db9?auto=format&fit=crop&w=900&q=80",
-    tag: "Fixação forte",
-    description: "Fragrância quente, intensa e poderosa para destaque absoluto."
+    name: "Dior J’adore Eau de Parfum",
+    volume: "100 ml",
+    category: "Importados Femininos",
+    price: 459.0,
+    image: "img/perfume-13.jpg",
+    tag: "Premium",
+    description: "Floral sofisticado muito famoso.",
+    featured: true
   },
   {
     id: 14,
-    name: "Bade'e Al Oud",
-    category: "Árabe Masculino",
-    price: 239.9,
-    oldPrice: 269.9,
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=80",
-    tag: "Árabe",
-    description: "Perfume marcante com alta fixação e aroma intenso."
+    name: "Dolce & Gabbana Light Blue Pour Femme",
+    volume: "100 ml",
+    category: "Importados Femininos",
+    price: 399.0,
+    image: "img/perfume-14.jpg",
+    tag: "Importado Feminino",
+    description: "Leve, refrescante e elegante para o dia a dia.",
+    featured: false
   },
   {
     id: 15,
-    name: "Fakhar Black",
-    category: "Árabe Masculino",
-    price: 219.9,
-    oldPrice: 249.9,
-    image: "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=80",
-    tag: "Intenso",
-    description: "Aroma noturno, impactante e cheio de personalidade."
+    name: "Britney Spears Fantasy Eau de Parfum",
+    volume: "100 ml",
+    category: "Importados Femininos",
+    price: 279.0,
+    image: "img/perfume-15.jpg",
+    tag: "Importado Feminino",
+    description: "Doce, marcante e muito querida entre os femininos.",
+    featured: false
   },
   {
     id: 16,
-    name: "Khamrah",
-    category: "Árabe Masculino",
-    price: 259.9,
-    oldPrice: 299.9,
-    image: "https://images.unsplash.com/photo-1618331835717-801e976710b2?auto=format&fit=crop&w=900&q=80",
-    tag: "Luxo árabe",
-    description: "Doce, quente e muito marcante, com ótima fixação."
+    name: "Jean Paul Gaultier Classique Eau de Toilette",
+    volume: "100 ml",
+    category: "Importados Femininos",
+    price: 419.0,
+    image: "img/perfume-16.jpg",
+    tag: "Importado Feminino",
+    description: "Clássico feminino com sensualidade e elegância.",
+    featured: false
   },
   {
     id: 17,
-    name: "Oud for Glory",
-    category: "Árabe Masculino",
-    price: 249.9,
-    oldPrice: 289.9,
-    image: "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?auto=format&fit=crop&w=900&q=80",
-    tag: "Marcante",
-    description: "Fragrância poderosa para quem gosta de perfume pesado."
+    name: "Carolina Herrera Good Girl Eau de Parfum",
+    volume: "80 ml",
+    category: "Importados Femininos",
+    price: 449.0,
+    image: "img/perfume-17.jpg",
+    tag: "Best Seller",
+    description: "Perfume intenso e sofisticado para momentos especiais.",
+    featured: true
   },
   {
     id: 18,
-    name: "Yara",
-    category: "Árabe Feminino",
-    price: 189.9,
-    oldPrice: 219.9,
-    image: "https://images.unsplash.com/photo-1622618991746-fe6004db3a47?auto=format&fit=crop&w=900&q=80",
-    tag: "Sucesso",
-    description: "Doce, cremosa e envolvente com toque exótico luxuoso."
+    name: "Calvin Klein CK IN2U For Her",
+    volume: "100 ml",
+    category: "Importados Femininos",
+    price: 299.0,
+    image: "img/perfume-18.jpg",
+    tag: "Importado Feminino",
+    description: "Aroma moderno, jovem e muito versátil.",
+    featured: false
   },
   {
     id: 19,
-    name: "Fakhar Rose",
-    category: "Árabe Feminino",
-    price: 209.9,
-    oldPrice: 239.9,
-    image: "https://images.unsplash.com/photo-1610461888750-10bfc601b874?auto=format&fit=crop&w=900&q=80",
-    tag: "Luxo Árabe",
-    description: "Elegância floral oriental com forte sensação de exclusividade."
+    name: "Valentino Donna Born in Roma",
+    volume: "100 ml",
+    category: "Importados Femininos",
+    price: 469.0,
+    image: "img/perfume-19.jpg",
+    tag: "Premium",
+    description: "Presença luxuosa com assinatura elegante.",
+    featured: false
   },
   {
     id: 20,
-    name: "Yara Moi",
-    category: "Árabe Feminino",
-    price: 199.9,
-    oldPrice: 229.9,
-    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=80",
-    tag: "Novo",
-    description: "Versão elegante, cremosa e sofisticada para presença marcante."
+    name: "Chanel Chance Eau Tendre",
+    volume: "100 ml",
+    category: "Importados Femininos",
+    price: 489.0,
+    image: "img/perfume-20.jpg",
+    tag: "Luxo",
+    description: "Fragrância refinada, delicada e sofisticada.",
+    featured: false
   },
   {
     id: 21,
-    name: "Haya",
-    category: "Árabe Feminino",
-    price: 229.9,
-    oldPrice: 259.9,
-    image: "https://images.unsplash.com/photo-1616604847462-db1d3c2403df?auto=format&fit=crop&w=900&q=80",
-    tag: "Exclusivo",
-    description: "Floral doce com visual luxuoso e aroma feminino refinado."
+    name: "Lattafa Asad Eau de Parfum",
+    volume: "100 ml",
+    category: "Árabes Masculinos",
+    price: 209.0,
+    image: "img/perfume-21.jpg",
+    tag: "Árabe Masculino",
+    description: "Fragrância quente, intensa e poderosa.",
+    featured: true
   },
   {
     id: 22,
-    name: "Delilah",
-    category: "Árabe Feminino",
-    price: 219.9,
-    oldPrice: 249.9,
-    image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=80",
-    tag: "Charmoso",
-    description: "Perfume feminino envolvente, delicado e muito elegante."
+    name: "Armaf Club de Nuit Intense Man",
+    volume: "105 ml",
+    category: "Árabes Masculinos",
+    price: 299.0,
+    image: "img/perfume-22.jpg",
+    tag: "Árabe Masculino",
+    description: "Aroma marcante com muita presença e fixação.",
+    featured: true
+  },
+  {
+    id: 23,
+    name: "Afnan 9PM Eau de Parfum",
+    volume: "100 ml",
+    category: "Árabes Masculinos",
+    price: 289.0,
+    image: "img/perfume-23.jpg",
+    tag: "Árabe Masculino",
+    description: "Perfume envolvente e impactante para noites especiais.",
+    featured: false
+  },
+  {
+    id: 24,
+    name: "Lattafa Fakhar Black",
+    volume: "100 ml",
+    category: "Árabes Masculinos",
+    price: 219.0,
+    image: "img/perfume-24.jpg",
+    tag: "Árabe Masculino",
+    description: "Cheiro sofisticado, elegante e de forte projeção.",
+    featured: false
+  },
+  {
+    id: 25,
+    name: "Lattafa Qaed Al Fursan",
+    volume: "90 ml",
+    category: "Árabes Masculinos",
+    price: 199.0,
+    image: "img/perfume-25.jpg",
+    tag: "Árabe Masculino",
+    description: "Aroma exótico com personalidade e luxo.",
+    featured: false
+  },
+  {
+    id: 26,
+    name: "Lattafa Badee Al Oud Oud for Glory",
+    volume: "100 ml",
+    category: "Árabes Masculinos",
+    price: 239.0,
+    image: "img/perfume-26.jpg",
+    tag: "Luxo Árabe",
+    description: "Intenso, nobre e muito marcante.",
+    featured: false
+  },
+  {
+    id: 27,
+    name: "Lattafa Khamrah",
+    volume: "100 ml",
+    category: "Árabes Masculinos",
+    price: 249.0,
+    image: "img/perfume-27.jpg",
+    tag: "Best Seller",
+    description: "Quente, doce e sofisticado com ótima fixação.",
+    featured: false
+  },
+  {
+    id: 28,
+    name: "Lattafa Ameer Al Oudh Intense Oud",
+    volume: "100 ml",
+    category: "Árabes Masculinos",
+    price: 229.0,
+    image: "img/perfume-28.jpg",
+    tag: "Árabe Masculino",
+    description: "Perfume de presença forte e assinatura luxuosa.",
+    featured: false
+  },
+  {
+    id: 29,
+    name: "Lattafa Maahir Legacy",
+    volume: "100 ml",
+    category: "Árabes Masculinos",
+    price: 239.0,
+    image: "img/perfume-29.jpg",
+    tag: "Árabe Masculino",
+    description: "Fresco, refinado e muito elegante.",
+    featured: false
+  },
+  {
+    id: 30,
+    name: "Lattafa Al Nashama Caprice",
+    volume: "100 ml",
+    category: "Árabes Masculinos",
+    price: 249.0,
+    image: "img/perfume-30.jpg",
+    tag: "Premium",
+    description: "Aroma sofisticado com projeção e personalidade.",
+    featured: false
+  },
+  {
+    id: 31,
+    name: "Dior Sauvage Eau de Parfum",
+    volume: "100 ml",
+    category: "Importados Masculinos",
+    price: 489.0,
+    image: "img/perfume-31.jpg",
+    tag: "Importado Masculino",
+    description: "Fragrância de presença forte e elegante.",
+    featured: true
+  },
+  {
+    id: 32,
+    name: "Bleu de Chanel Eau de Parfum",
+    volume: "100 ml",
+    category: "Importados Masculinos",
+    price: 529.0,
+    image: "img/perfume-32.jpg",
+    tag: "Luxo",
+    description: "Sofisticado, refinado e extremamente versátil.",
+    featured: true
+  },
+  {
+    id: 33,
+    name: "Paco Rabanne Invictus Eau de Toilette",
+    volume: "100 ml",
+    category: "Importados Masculinos",
+    price: 419.0,
+    image: "img/perfume-33.jpg",
+    tag: "Importado Masculino",
+    description: "Moderno, vibrante e cheio de energia.",
+    featured: false
+  },
+  {
+    id: 34,
+    name: "Jean Paul Gaultier Le Male Eau de Toilette",
+    volume: "125 ml",
+    category: "Importados Masculinos",
+    price: 439.0,
+    image: "img/perfume-34.jpg",
+    tag: "Importado Masculino",
+    description: "Clássico masculino marcante e elegante.",
+    featured: false
+  },
+  {
+    id: 35,
+    name: "Calvin Klein CK One",
+    volume: "100 ml",
+    category: "Importados Masculinos",
+    price: 279.0,
+    image: "img/perfume-35.jpg",
+    tag: "Importado Masculino",
+    description: "Leve, fresco e perfeito para uso diário.",
+    featured: false
+  },
+  {
+    id: 36,
+    name: "Ferrari Black Eau de Toilette",
+    volume: "125 ml",
+    category: "Importados Masculinos",
+    price: 239.0,
+    image: "img/perfume-36.jpg",
+    tag: "Importado Masculino",
+    description: "Fragrância acessível e muito conhecida.",
+    featured: false
+  },
+  {
+    id: 37,
+    name: "Dolce & Gabbana Light Blue Pour Homme",
+    volume: "125 ml",
+    category: "Importados Masculinos",
+    price: 429.0,
+    image: "img/perfume-37.jpg",
+    tag: "Importado Masculino",
+    description: "Fresco, sofisticado e muito agradável.",
+    featured: false
+  },
+  {
+    id: 38,
+    name: "Azzaro Pour Homme",
+    volume: "100 ml",
+    category: "Importados Masculinos",
+    price: 299.0,
+    image: "img/perfume-38.jpg",
+    tag: "Clássico",
+    description: "Masculino clássico com personalidade forte.",
+    featured: false
+  },
+  {
+    id: 39,
+    name: "Valentino Uomo Born in Roma",
+    volume: "100 ml",
+    category: "Importados Masculinos",
+    price: 489.0,
+    image: "img/perfume-39.jpg",
+    tag: "Premium",
+    description: "Cheiro moderno, luxuoso e sedutor.",
+    featured: false
+  },
+  {
+    id: 40,
+    name: "Chanel Platinum Égoïste",
+    volume: "100 ml",
+    category: "Importados Masculinos",
+    price: 519.0,
+    image: "img/perfume-40.jpg",
+    tag: "Luxo",
+    description: "Sofisticação clássica com assinatura forte.",
+    featured: false
   }
 ];
 
 let selectedCategory = "Todos";
-let cart = loadCart();
+let cart = [];
 
+const categoriesContainer = document.getElementById("categories");
 const productsGrid = document.getElementById("productsGrid");
 const featuredGrid = document.getElementById("featuredGrid");
+
+const gridImportadosMasculinos = document.getElementById("gridImportadosMasculinos");
+const gridImportadosFemininos = document.getElementById("gridImportadosFemininos");
+const gridArabesMasculinos = document.getElementById("gridArabesMasculinos");
+const gridArabesFemininos = document.getElementById("gridArabesFemininos");
+
 const searchInput = document.getElementById("searchInput");
-const cartItems = document.getElementById("cartItems");
-const cartTotal = document.getElementById("cartTotal");
-const checkoutBtn = document.getElementById("checkoutBtn");
-const cartCountEls = document.querySelectorAll("[data-cart-count]");
 
 const cartSidebar = document.getElementById("cartSidebar");
 const cartOverlay = document.getElementById("cartOverlay");
 const openCartBtn = document.getElementById("openCartBtn");
-const openCartBtnMobile = document.getElementById("openCartBtnMobile");
-const heroCartBtn = document.getElementById("heroCartBtn");
 const closeCartBtn = document.getElementById("closeCartBtn");
+const floatingCartBtn = document.getElementById("floatingCartBtn");
 
-const menuBtn = document.getElementById("menuBtn");
-const mobileNav = document.getElementById("mobileNav");
+const cartItems = document.getElementById("cartItems");
+const cartTotal = document.getElementById("cartTotal");
+const cartCountTop = document.getElementById("cartCountTop");
+const cartCountFloat = document.getElementById("cartCountFloat");
+const checkoutBtn = document.getElementById("checkoutBtn");
 
-const toast = document.getElementById("toast");
-const categoryButtons = document.querySelectorAll(".category-btn");
-const desktopCategoryLinks = document.querySelectorAll("[data-menu-category]");
-const mobileCategoryLinks = document.querySelectorAll("[data-mobile-category]");
+const customerName = document.getElementById("customerName");
+const customerPhone = document.getElementById("customerPhone");
+const customerAddress = document.getElementById("customerAddress");
+const customerDistrict = document.getElementById("customerDistrict");
+const customerCity = document.getElementById("customerCity");
+const customerCep = document.getElementById("customerCep");
+const paymentMethod = document.getElementById("paymentMethod");
+
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileMenuLinks = document.querySelectorAll(".mobile-menu-link");
 
 function formatPrice(value) {
   return value.toLocaleString("pt-BR", {
@@ -257,185 +496,224 @@ function formatPrice(value) {
   });
 }
 
-function saveCart() {
-  localStorage.setItem(cartStorageKey, JSON.stringify(cart));
-}
-
-function loadCart() {
-  const data = localStorage.getItem(cartStorageKey);
-  return data ? JSON.parse(data) : [];
-}
-
-function showToast(message = "Produto adicionado ao carrinho") {
-  toast.textContent = message;
-  toast.classList.add("show");
-
-  clearTimeout(showToast._timer);
-  showToast._timer = setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2200);
-}
-
-function getFilteredProducts() {
-  const searchTerm = searchInput.value.toLowerCase().trim();
-
-  return products.filter((product) => {
-    const matchesCategory =
-      selectedCategory === "Todos" || product.category === selectedCategory;
-
-    const matchesSearch =
-      product.name.toLowerCase().includes(searchTerm) ||
-      product.category.toLowerCase().includes(searchTerm) ||
-      product.description.toLowerCase().includes(searchTerm);
-
-    return matchesCategory && matchesSearch;
-  });
-}
-
-function productCardTemplate(product) {
+function createProductCard(product) {
   return `
-    <article class="product">
-      <div class="product__image">
-        <img src="${product.image}" alt="${product.name}" />
-        <span class="product__tag">${product.tag}</span>
+    <article class="product-card">
+      <div class="product-image">
+        <img src="${product.image}" alt="${product.name}">
+        <span class="product-tag">${product.tag}</span>
       </div>
 
-      <div class="product__body">
-        <p class="product__category">${product.category}</p>
-        <h3 class="product__title">${product.name}</h3>
-        <p class="product__description">${product.description}</p>
+      <div class="product-info">
+        <p class="product-category">${product.category}</p>
+        <h4 class="product-name">${product.name}</h4>
+        <p class="product-volume">${product.volume}</p>
+        <p class="product-description">${product.description}</p>
 
-        <div class="priceBox">
-          <span class="oldPrice">${formatPrice(product.oldPrice)}</span>
-          <strong class="price">${formatPrice(product.price)}</strong>
-        </div>
-
-        <div class="product__bottom">
-          <button class="add-cart-btn" data-id="${product.id}">
-            Adicionar ao carrinho
-          </button>
+        <div class="product-bottom">
+          <span class="product-price">${formatPrice(product.price)}</span>
+          <button class="add-cart-btn" data-id="${product.id}">Adicionar</button>
         </div>
       </div>
     </article>
   `;
 }
 
-function bindAddToCartButtons() {
-  const addButtons = document.querySelectorAll(".add-cart-btn");
+function bindAddToCartButtons(scope = document) {
+  scope.querySelectorAll(".add-cart-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      addToCart(Number(button.dataset.id));
+    });
+  });
+}
 
-  addButtons.forEach((button) => {
-    button.onclick = () => {
-      const productId = Number(button.dataset.id);
-      addToCart(productId);
-    };
+function renderCategories() {
+  categoriesContainer.innerHTML = "";
+
+  categories.forEach((category) => {
+    const button = document.createElement("button");
+    button.className = "category-btn";
+    button.textContent = category;
+
+    if (category === selectedCategory) {
+      button.classList.add("active");
+    }
+
+    button.addEventListener("click", () => {
+      selectedCategory = category;
+      renderCategories();
+      renderProducts();
+    });
+
+    categoriesContainer.appendChild(button);
   });
 }
 
 function renderProducts() {
-  const filteredProducts = getFilteredProducts();
+  const term = searchInput.value.toLowerCase().trim();
 
-  if (filteredProducts.length === 0) {
-    productsGrid.innerHTML = `
-      <div class="emptyState">
-        Nenhum perfume encontrado nessa busca.
-      </div>
-    `;
-    return;
-  }
+  const filtered = products.filter((product) => {
+    const categoryMatch =
+      selectedCategory === "Todos" || product.category === selectedCategory;
 
-  productsGrid.innerHTML = filteredProducts.map(productCardTemplate).join("");
-  bindAddToCartButtons();
+    const searchMatch =
+      product.name.toLowerCase().includes(term) ||
+      product.category.toLowerCase().includes(term) ||
+      product.description.toLowerCase().includes(term);
+
+    return categoryMatch && searchMatch;
+  });
+
+  productsGrid.innerHTML = filtered.length
+    ? filtered.map(createProductCard).join("")
+    : `<p style="color:#bdbdbd;font-size:18px;">Nenhum perfume encontrado.</p>`;
+
+  bindAddToCartButtons(productsGrid);
 }
 
-function renderFeaturedProducts() {
-  const featuredProducts = products.slice(0, 10);
-  featuredGrid.innerHTML = featuredProducts.map(productCardTemplate).join("");
-  bindAddToCartButtons();
+function renderStaticSections() {
+  const featured = products.filter((item) => item.featured).slice(0, 8);
+  featuredGrid.innerHTML = featured.map(createProductCard).join("");
+
+  gridImportadosMasculinos.innerHTML = products
+    .filter((item) => item.category === "Importados Masculinos")
+    .slice(0, 8)
+    .map(createProductCard)
+    .join("");
+
+  gridImportadosFemininos.innerHTML = products
+    .filter((item) => item.category === "Importados Femininos")
+    .slice(0, 8)
+    .map(createProductCard)
+    .join("");
+
+  gridArabesMasculinos.innerHTML = products
+    .filter((item) => item.category === "Árabes Masculinos")
+    .slice(0, 8)
+    .map(createProductCard)
+    .join("");
+
+  gridArabesFemininos.innerHTML = products
+    .filter((item) => item.category === "Árabes Femininos")
+    .slice(0, 8)
+    .map(createProductCard)
+    .join("");
+
+  bindAddToCartButtons(featuredGrid);
+  bindAddToCartButtons(gridImportadosMasculinos);
+  bindAddToCartButtons(gridImportadosFemininos);
+  bindAddToCartButtons(gridArabesMasculinos);
+  bindAddToCartButtons(gridArabesFemininos);
 }
 
 function addToCart(productId) {
-  const foundProduct = products.find((product) => product.id === productId);
-  if (!foundProduct) return;
+  const product = products.find((item) => item.id === productId);
+  const existing = cart.find((item) => item.id === productId);
 
-  const existingItem = cart.find((item) => item.id === productId);
-
-  if (existingItem) {
-    existingItem.quantity += 1;
+  if (existing) {
+    existing.quantity += 1;
   } else {
-    cart.push({ ...foundProduct, quantity: 1 });
+    cart.push({ ...product, quantity: 1 });
   }
 
-  saveCart();
   renderCart();
   openCart();
-  showToast(`${foundProduct.name} adicionado ao carrinho`);
+}
+
+function increaseItem(productId) {
+  const item = cart.find((item) => item.id === productId);
+  if (!item) return;
+  item.quantity += 1;
+  renderCart();
 }
 
 function decreaseItem(productId) {
-  const item = cart.find((product) => product.id === productId);
+  const item = cart.find((item) => item.id === productId);
   if (!item) return;
 
   item.quantity -= 1;
 
   if (item.quantity <= 0) {
-    cart = cart.filter((product) => product.id !== productId);
+    cart = cart.filter((item) => item.id !== productId);
   }
 
-  saveCart();
   renderCart();
 }
 
-function increaseItem(productId) {
-  const item = cart.find((product) => product.id === productId);
-  if (!item) return;
+function buildWhatsAppMessage(total) {
+  const payment = paymentMethod.value || "Pix";
 
-  item.quantity += 1;
-  saveCart();
-  renderCart();
+  const orderLines = cart
+    .map(
+      (item) =>
+        `* ${item.name} (${item.quantity}x) - ${formatPrice(item.price * item.quantity)}`
+    )
+    .join("\n");
+
+  return `Meu Pedido
+
+${orderLines}
+
+Total: ${formatPrice(total)}
+
+Nome: ${customerName.value || "-"}
+Telefone: ${customerPhone.value || "-"}
+Endereço: ${customerAddress.value || "-"}
+Bairro: ${customerDistrict.value || "-"}
+Cidade: ${customerCity.value || "-"}
+Cep: ${customerCep.value || "-"}
+
+Pagamento: ${payment}
+
+Prazo de Entrega: 3 a 5 dias após a confirmação da compra.
+
+Para finalizar sua compra, enviaremos o link de pagamento, Pix ou 
+Cartão de crédito em até 5x com acréscimo da taxa da maquininha, após efetuar pagamento nos envie o comprovante. 
+
+Obrigado pela compra.
+
+Rodrigues Perfums`;
 }
 
-function removeItem(productId) {
-  cart = cart.filter((product) => product.id !== productId);
-  saveCart();
-  renderCart();
-  showToast("Produto removido do carrinho");
-}
+function updateCheckoutLink() {
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-function updateCartCount(totalQuantity) {
-  cartCountEls.forEach((element) => {
-    element.textContent = totalQuantity;
-  });
+  if (!cart.length) {
+    checkoutBtn.href = `https://wa.me/${whatsappNumber}`;
+    return;
+  }
+
+  const message = buildWhatsAppMessage(total);
+  checkoutBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
 function renderCart() {
   cartItems.innerHTML = "";
 
-  if (cart.length === 0) {
+  if (!cart.length) {
     cartItems.innerHTML = `<p class="empty-cart">Nenhum item adicionado ainda.</p>`;
     cartTotal.textContent = formatPrice(0);
-    updateCartCount(0);
-    checkoutBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      "Olá! Vim pelo site da Rodrigues Gomes Perfumes."
-    )}`;
+    cartCountTop.textContent = "0";
+    cartCountFloat.textContent = "0";
+    updateCheckoutLink();
     return;
   }
 
   let total = 0;
-  let totalQuantity = 0;
+  let quantity = 0;
 
   cart.forEach((item) => {
     total += item.price * item.quantity;
-    totalQuantity += item.quantity;
+    quantity += item.quantity;
 
-    const cartCard = document.createElement("div");
-    cartCard.classList.add("cart-item");
+    const card = document.createElement("div");
+    card.className = "cart-item";
 
-    cartCard.innerHTML = `
-      <img src="${item.image}" alt="${item.name}" />
-
+    card.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
       <div class="cart-item-info">
         <h4>${item.name}</h4>
-        <p>${item.category}</p>
+        <p>${item.volume}</p>
         <p>${formatPrice(item.price)}</p>
 
         <div class="quantity-controls">
@@ -443,116 +721,74 @@ function renderCart() {
           <span>${item.quantity}</span>
           <button class="increase-btn" data-id="${item.id}">+</button>
         </div>
-
-        <button class="remove-btn" data-id="${item.id}">
-          Remover item
-        </button>
       </div>
     `;
 
-    cartItems.appendChild(cartCard);
+    cartItems.appendChild(card);
   });
 
   cartTotal.textContent = formatPrice(total);
-  updateCartCount(totalQuantity);
+  cartCountTop.textContent = String(quantity);
+  cartCountFloat.textContent = String(quantity);
 
-  const message = `
-Olá, quero finalizar meu pedido:
-
-${cart
-  .map(
-    (item) =>
-      `• ${item.name} | Qtd: ${item.quantity} | ${formatPrice(item.price * item.quantity)}`
-  )
-  .join("\n")}
-
-Total: ${formatPrice(total)}
-  `.trim();
-
-  checkoutBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-  document.querySelectorAll(".decrease-btn").forEach((button) => {
-    button.onclick = () => decreaseItem(Number(button.dataset.id));
-  });
+  updateCheckoutLink();
 
   document.querySelectorAll(".increase-btn").forEach((button) => {
-    button.onclick = () => increaseItem(Number(button.dataset.id));
+    button.addEventListener("click", () => {
+      increaseItem(Number(button.dataset.id));
+    });
   });
 
-  document.querySelectorAll(".remove-btn").forEach((button) => {
-    button.onclick = () => removeItem(Number(button.dataset.id));
+  document.querySelectorAll(".decrease-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      decreaseItem(Number(button.dataset.id));
+    });
   });
 }
 
 function openCart() {
   cartSidebar.classList.add("active");
   cartOverlay.classList.add("active");
-  cartSidebar.setAttribute("aria-hidden", "false");
 }
 
 function closeCart() {
   cartSidebar.classList.remove("active");
   cartOverlay.classList.remove("active");
-  cartSidebar.setAttribute("aria-hidden", "true");
-}
-
-function setCategory(category) {
-  selectedCategory = category;
-
-  categoryButtons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.category === category);
-  });
-
-  renderProducts();
-  document.getElementById("catalogo").scrollIntoView({ behavior: "smooth" });
 }
 
 function toggleMobileMenu() {
-  const isOpen = mobileNav.classList.toggle("show");
-  menuBtn.setAttribute("aria-expanded", String(isOpen));
-}
-
-function closeMobileMenu() {
-  mobileNav.classList.remove("show");
-  menuBtn.setAttribute("aria-expanded", "false");
+  mobileMenu.classList.toggle("active");
 }
 
 searchInput.addEventListener("input", renderProducts);
 
-categoryButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    setCategory(button.dataset.category);
-  });
-});
-
-desktopCategoryLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    setCategory(link.dataset.menuCategory);
-  });
-});
-
-mobileCategoryLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    setCategory(link.dataset.mobileCategory);
-    closeMobileMenu();
-  });
-});
-
 openCartBtn.addEventListener("click", openCart);
-openCartBtnMobile.addEventListener("click", openCart);
-heroCartBtn.addEventListener("click", openCart);
-
+floatingCartBtn.addEventListener("click", openCart);
 closeCartBtn.addEventListener("click", closeCart);
 cartOverlay.addEventListener("click", closeCart);
 
-menuBtn.addEventListener("click", toggleMobileMenu);
+menuToggle.addEventListener("click", toggleMobileMenu);
 
-document.querySelectorAll(".mobileNav a").forEach((link) => {
-  link.addEventListener("click", closeMobileMenu);
+mobileMenuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+  });
 });
 
+[
+  customerName,
+  customerPhone,
+  customerAddress,
+  customerDistrict,
+  customerCity,
+  customerCep,
+  paymentMethod
+].forEach((field) => {
+  field.addEventListener("input", updateCheckoutLink);
+  field.addEventListener("change", updateCheckoutLink);
+});
+
+renderCategories();
 renderProducts();
-renderFeaturedProducts();
+renderStaticSections();
 renderCart();
