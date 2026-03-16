@@ -1140,4 +1140,21 @@ color:#e5e5e5;
 
 .hero-benefits li{
 list-style:none;
+}.product-price-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pix {
+  color: #d4af37;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.card {
+  color: #777;
+  font-size: 13px;
+  line-height: 1.2;
 }
