@@ -879,3 +879,17 @@ select {
     grid-template-columns: 1fr;
   }
 }
+.checkout-info {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(212,175,55,0.25);
+  background: rgba(212,175,55,0.05);
+  color: #e8e8e8;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.checkout-info strong{
+  color:#d4af37;
+}

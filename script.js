@@ -4,219 +4,231 @@ const categories = [
   "Todos",
   "Importados Femininos",
   "Importados Masculinos",
-  "Árabes Femininos",
-  "Árabes Masculinos"
+  "Em Breve",
+  "Em Breve"
 ];
 
 const products = [
   {
     id: 1,
-    name: "Lattafa Yara Eau de Parfum",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Femininos",
-    price: 189.0,
-    image: "img/perfume-1.jpg",
-    tag: "Árabe Feminino",
-    description: "Fragrância doce e elegante com toque moderno e envolvente.",
-    featured: true
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve.",
+    featured: false,
+    hidden: true,
   },
   {
     id: 2,
-    name: "Lattafa Fakhar Rose Eau de Parfum",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Femininos",
-    price: 199.0,
-    image: "img/perfume-2.jpg",
-    tag: "Árabe Feminino",
-    description: "Aroma floral sofisticado com identidade marcante.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve.",
+    featured: false,
+    hidden: true,
   },
   {
     id: 3,
-    name: "Lattafa Yara Moi Eau de Parfum",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Femininos",
-    price: 209.0,
-    image: "img/perfume-3.jpg",
-    tag: "Árabe Feminino",
-    description: "Perfume cremoso, refinado e cheio de presença.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve.",
+    featured: false,
+    hidden: true,
   },
   {
     id: 4,
-    name: "Lattafa Badee Al Oud Amethyst",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Femininos",
-    price: 229.0,
-    image: "img/perfume-4.jpg",
-    tag: "Luxo Árabe",
-    description: "Fragrância intensa, exótica e de alta fixação.",
-    featured: true
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve..",
+    featured: false,
+    hidden: true,
   },
   {
     id: 5,
-    name: "Lattafa Victoria Eau de Parfum",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Femininos",
-    price: 189.0,
-    image: "img/perfume-5.jpg",
-    tag: "Árabe Feminino",
-    description: "Aroma elegante para mulheres que gostam de sofisticação.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve.",
+    featured: false,
+    hidden: true,
   },
   {
     id: 6,
-    name: "Lattafa Tharwah Gold Eau de Parfum",
+    name: "Em Breve",
     volume: "100 ml",
     category: "Árabes Femininos",
-    price: 239.0,
-    image: "img/perfume-6.jpg",
-    tag: "Destaque",
-    description: "Toque luxuoso com presença forte e refinada.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve.",
+    featured: false,
+    hidden: true,
   },
   {
     id: 7,
-    name: "Lattafa Petra Eau de Parfum",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Femininos",
-    price: 199.0,
-    image: "img/perfume-7.jpg",
-    tag: "Árabe Feminino",
-    description: "Fragrância delicada e marcante ao mesmo tempo.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve.",
+    featured: false,
+    hidden: true,
   },
   {
     id: 8,
-    name: "Lattafa Afeef Eau de Parfum",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Femininos",
-    price: 209.0,
-    image: "img/perfume-8.jpg",
-    tag: "Árabe Feminino",
-    description: "Elegância oriental com acabamento luxuoso.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve.",
+    featured: false,
+    hidden: true,
   },
   {
     id: 9,
-    name: "Lattafa The Kingdom Eau de Parfum",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Femininos",
-    price: 219.0,
-    image: "img/perfume-9.jpg",
-    tag: "Premium",
-    description: "Fragrância de personalidade forte e sofisticada.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve.",
+    featured: false,
+    hidden: true,
   },
   {
     id: 10,
-    name: "Lattafa Habik For Women Eau de Parfum",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Femininos",
-    price: 199.0,
-    image: "img/perfume-10.jpg",
-    tag: "Árabe Feminino",
-    description: "Aroma feminino refinado, envolvente e moderno.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve.",
+    featured: false,
+    hidden: true,
   },
   {
     id: 11,
-    name: "Lancôme La Vie Est Belle Eau de Parfum",
-    volume: "100 ml",
+    name: "Carolina Herrera La Bomba ",
+    volume: "80 ml",
     category: "Importados Femininos",
-    price: 429.0,
-    image: "img/perfume-11.jpg",
+    price: 765.70,
+    image: "la.bomba.jpeg",
     tag: "Importado Feminino",
-    description: "Doce elegante com baunilha e íris, muito popular.",
-    featured: true
+    description: "Aroma leve e marcante",
+    featured: false,
+    hidden: false,
   },
   {
     id: 12,
-    name: "Carolina Herrera 212 VIP Black",
+    name: "Chanel Chance Eau Tendre ",
     volume: "100 ml",
     category: "Importados Femininos",
-    price: 518.70,
-    image: "212.vip.black.jpeg",
-    tag: "Importado Masculino",
+    price:1246.70,
+    image: "chanel.fem.jpeg",
+    tag: "Importado Feminino",
     description: "Fragrância Marcante.",
-    featured: false
-  },
-  {
-    id: 13,
-    name: "Dior J’adore Eau de Parfum",
-    volume: "100 ml",
-    category: "Importados Femininos",
-    price: 459.0,
-    image: "img/perfume-13.jpg",
-    tag: "Premium",
-    description: "Floral sofisticado muito famoso.",
     featured: true
   },
   {
-    id: 14,
-    name: "Dolce & Gabbana Light Blue Pour Femme",
-    volume: "100 ml",
+    id: 13,
+    name: "Carolina Herrera Good Girl Blush",
+    volume: "90 ml",
     category: "Importados Femininos",
-    price: 399.0,
-    image: "img/perfume-14.jpg",
+    price: 687.70,
+    image: "good.girl.blush.jpeg",
+    tag: "Premium",
+    description: "sofisticado muito famoso.",
+    featured: false
+  },
+  {
+    id: 14,
+    name: "Dolce & Gabbana The One EDP ",
+    volume: "75 ml",
+    category: "Importados Femininos",
+    price: 661.70,
+    image: "dolcegabbana.jpeg",
     tag: "Importado Feminino",
     description: "Leve, refrescante e elegante para o dia a dia.",
     featured: false
   },
   {
     id: 15,
-    name: "Britney Spears Fantasy Eau de Parfum",
+    name: "Lancome La Vie Belle Iris Absolut",
     volume: "100 ml",
     category: "Importados Femininos",
-    price: 279.0,
-    image: "img/perfume-15.jpg",
+    price: 726.70,
+    image: "la.vie.jpeg",
     tag: "Importado Feminino",
     description: "Doce, marcante e muito querida entre os femininos.",
     featured: false
   },
   {
     id: 16,
-    name: "Jean Paul Gaultier Classique Eau de Toilette",
-    volume: "100 ml",
+    name: "Versace Bright Crystal Parfum",
+    volume: "90 ml",
     category: "Importados Femininos",
-    price: 419.0,
-    image: "img/perfume-16.jpg",
+    price: 622.50,
+    image: "versace.fem.jpeg",
     tag: "Importado Feminino",
     description: "Clássico feminino com sensualidade e elegância.",
     featured: false
   },
   {
     id: 17,
-    name: "Carolina Herrera Good Girl Eau de Parfum",
-    volume: "80 ml",
+    name: "Dolce & Gabbana Light Blue",
+    volume: "100 ml",
     category: "Importados Femininos",
-    price: 449.0,
-    image: "img/perfume-17.jpg",
+    price: 289.50,
+    image: "dolce.light.jpeg",
     tag: "Best Seller",
-    description: "Perfume intenso e sofisticado para momentos especiais.",
-    featured: true
+    description: "Perfume leve e sofisticado para momentos especiais.",
+    featured: false
   },
   {
     id: 18,
-    name: "Calvin Klein CK IN2U For Her",
+    name: "Chanel Coco Mademoiselle EDP",
     volume: "100 ml",
     category: "Importados Femininos",
-    price: 299.0,
-    image: "img/perfume-18.jpg",
+    price: 1259.70,
+    image: "mademoiselle.jpeg",
     tag: "Importado Feminino",
     description: "Aroma moderno, jovem e muito versátil.",
     featured: false
   },
   {
     id: 19,
-    name: "Valentino Donna Born in Roma",
+    name: "Chanel Chance Eau Splendide ",
     volume: "100 ml",
     category: "Importados Femininos",
-    price: 469.0,
-    image: "img/perfume-19.jpg",
+    price: 1246.70,
+    image: "splendide.jpeg",
     tag: "Premium",
     description: "Presença luxuosa com assinatura elegante.",
-    featured: false
+    featured: false,
+    hidden: false,
   },
   {
     id: 20,
@@ -231,113 +243,123 @@ const products = [
   },
   {
     id: 21,
-    name: "Lattafa Asad Eau de Parfum",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Masculinos",
-    price: 209.0,
-    image: "img/perfume-21.jpg",
-    tag: "Árabe Masculino",
-    description: "Fragrância quente, intensa e poderosa.",
-    featured: true
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve.",
+    featured: false,
+    hidden: true,
   },
   {
     id: 22,
-    name: "Armaf Club de Nuit Intense Man",
-    volume: "105 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Masculinos",
-    price: 299.0,
-    image: "img/perfume-22.jpg",
-    tag: "Árabe Masculino",
-    description: "Aroma marcante com muita presença e fixação.",
-    featured: true
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve",
+    featured: false,
+    hidden: true,
   },
   {
     id: 23,
-    name: "Afnan 9PM Eau de Parfum",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Masculinos",
-    price: 289.0,
-    image: "img/perfume-23.jpg",
-    tag: "Árabe Masculino",
-    description: "Perfume envolvente e impactante para noites especiais.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve",
+    featured: false,
+    hidden: true,
   },
   {
     id: 24,
-    name: "Lattafa Fakhar Black",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Masculinos",
-    price: 219.0,
-    image: "img/perfume-24.jpg",
-    tag: "Árabe Masculino",
-    description: "Cheiro sofisticado, elegante e de forte projeção.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve",
+    featured: false,
+    hidden: true,
   },
   {
     id: 25,
-    name: "Lattafa Qaed Al Fursan",
-    volume: "90 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Masculinos",
-    price: 199.0,
-    image: "img/perfume-25.jpg",
-    tag: "Árabe Masculino",
-    description: "Aroma exótico com personalidade e luxo.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve",
+    featured: false,
+    hidden: true,
   },
   {
     id: 26,
-    name: "Lattafa Badee Al Oud Oud for Glory",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Masculinos",
-    price: 239.0,
-    image: "img/perfume-26.jpg",
-    tag: "Luxo Árabe",
-    description: "Intenso, nobre e muito marcante.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve",
+    featured: false,
+    hidden: true,
   },
   {
     id: 27,
-    name: "Lattafa Khamrah",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Masculinos",
-    price: 249.0,
-    image: "img/perfume-27.jpg",
-    tag: "Best Seller",
-    description: "Quente, doce e sofisticado com ótima fixação.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve",
+    featured: false,
+    hidden: true,
   },
   {
     id: 28,
-    name: "Lattafa Ameer Al Oudh Intense Oud",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Masculinos",
-    price: 229.0,
-    image: "img/perfume-28.jpg",
-    tag: "Árabe Masculino",
-    description: "Perfume de presença forte e assinatura luxuosa.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve",
+    featured: false,
+    hidden: true,
   },
   {
     id: 29,
-    name: "Lattafa Maahir Legacy",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Masculinos",
-    price: 239.0,
-    image: "img/perfume-29.jpg",
-    tag: "Árabe Masculino",
-    description: "Fresco, refinado e muito elegante.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve",
+    featured: false,
+    hidden: true,
   },
   {
     id: 30,
-    name: "Lattafa Al Nashama Caprice",
-    volume: "100 ml",
+    name: "Em Breve",
+    volume: "00 ml",
     category: "Árabes Masculinos",
-    price: 249.0,
-    image: "img/perfume-30.jpg",
-    tag: "Premium",
-    description: "Aroma sofisticado com projeção e personalidade.",
-    featured: false
+    price: 0.0,
+    image: "em.breve.jpeg",
+    tag: "Novidade em Breve",
+    description: "Novidade em Breve",
+    featured: false,
+    hidden: true,
   },
   {
     id: 31,
@@ -414,7 +436,7 @@ const products = [
     image: "prada.masc.jpeg",
     tag: "Importado Masculino",
     description: "Fresco, sofisticado e muito agradável.",
-    featured: false
+    featured: true
   },
   {
     id: 38,
@@ -663,16 +685,20 @@ function renderProducts() {
   const term = searchInput.value.toLowerCase().trim();
 
   const filtered = products.filter((product) => {
-    const categoryMatch =
-      selectedCategory === "Todos" || product.category === selectedCategory;
 
-    const searchMatch =
-      product.name.toLowerCase().includes(term) ||
-      product.category.toLowerCase().includes(term) ||
-      product.description.toLowerCase().includes(term);
+  if(product.hidden) return false;
 
-    return categoryMatch && searchMatch;
-  });
+  const categoryMatch =
+    selectedCategory === "Todos" || product.category === selectedCategory;
+
+  const searchMatch =
+    product.name.toLowerCase().includes(term) ||
+    product.category.toLowerCase().includes(term) ||
+    product.description.toLowerCase().includes(term);
+
+  return categoryMatch && searchMatch;
+});
+ 
 
   productsGrid.innerHTML = filtered.length
     ? filtered.map(createProductCard).join("")
@@ -694,7 +720,7 @@ function renderStaticSections() {
 
   gridImportadosFemininos.innerHTML = products
     .filter((item) => item.category === "Importados Femininos")
-    .slice(0, 8)
+    .slice(0, 20)
     .map(createProductCard)
     .join("");
 
@@ -903,3 +929,30 @@ renderCategories();
 renderProducts();
 renderStaticSections();
 renderCart();
+function verificarCampos() {
+
+  const nome = document.getElementById("customerName").value.trim();
+  const telefone = document.getElementById("customerPhone").value.trim();
+  const endereco = document.getElementById("customerAddress").value.trim();
+  const bairro = document.getElementById("customerDistrict").value.trim();
+  const cidade = document.getElementById("customerCity").value.trim();
+  const cep = document.getElementById("customerCep").value.trim();
+
+  if (!nome || !telefone || !endereco || !bairro || !cidade || !cep) {
+
+    alert("Preencha todos os campos antes de finalizar o pedido.");
+
+    return false;
+  }
+
+  return true;
+}
+
+
+checkoutBtn.addEventListener("click", function (e) {
+
+  if (!verificarCampos()) {
+    e.preventDefault();
+  }
+
+});

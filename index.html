@@ -10,7 +10,7 @@
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gsta tic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
@@ -40,8 +40,8 @@
         <a href="#mais-vendidos" class="nav-link">Mais vendidos</a>
         <a href="#importados-masculinos" class="nav-link">Importados Masculino</a>
         <a href="#importados-femininos" class="nav-link">Importados Feminino</a>
-        <a href="#arabes-masculinos" class="nav-link">Árabe Masculino</a>
-        <a href="#arabes-femininos" class="nav-link">Árabe Feminino</a>
+        <a href="#arabes-masculinos" class="nav-link">Em Breve</a>
+        <a href="#arabes-femininos" class="nav-link">Em Breve</a>
 
         <button class="cart-top-btn" id="openCartBtn">
           <i class="fa-solid fa-bag-shopping"></i>
@@ -175,39 +175,48 @@
       <p class="empty-cart">Nenhum item adicionado ainda.</p>
     </div>
 
-    <div class="checkout-form">
+    <div class="checkout-form"><div class="checkout-info">
+  <p>
+    Após selecionar os produtos e preencher seus dados, seu pedido será enviado
+    automaticamente para nosso <strong>WhatsApp</strong> para confirmação.
+  </p>
+</div>
       <h4>Dados do Pedido</h4>
 
       <div class="form-group">
         <label for="customerName">Nome</label>
-        <input type="text" id="customerName" placeholder="Seu nome" value="" />
+        <input type="text" id="customerName" placeholder="Seu nome" value="" required />
       </div>
 
       <div class="form-group">
         <label for="customerPhone">Telefone</label>
-        <input type="text" id="customerPhone" placeholder="Seu telefone" value="" />
+        <input type="text" id="customerPhone" placeholder="Seu telefone" value="" required /> 
       </div>
 
       <div class="form-group">
         <label for="customerAddress">Endereço</label>
-        <input type="text" id="customerAddress" placeholder="Rua e número" value="" />
+        <input type="text" id="customerAddress" placeholder="Rua e número" value="" required /> 
       </div>
+      <div class="form-group">
+<label for="customerComplement">Complemento</label>
+<input type="text" id="customerComplement" placeholder="Casa, Apto, Bloco, Referência..." value="" />
+</div>
 
       <div class="form-row">
         <div class="form-group">
           <label for="customerDistrict">Bairro</label>
-          <input type="text" id="customerDistrict" placeholder="Seu bairro" value="" />
+          <input type="text" id="customerDistrict" placeholder="Seu bairro" value="" required /> 
         </div>
 
         <div class="form-group">
           <label for="customerCity">Cidade</label>
-          <input type="text" id="customerCity" placeholder="Sua cidade" value="" />
+          <input type="text" id="customerCity" placeholder="Sua cidade" value="" required /> 
         </div>
       </div>
 
       <div class="form-group">
         <label for="customerCep">CEP</label>
-        <input type="text" id="customerCep" placeholder="Seu CEP" value="" />
+        <input type="text" id="customerCep" placeholder="Seu CEP" value="" required /> 
       </div>
 
       <div class="form-group">
