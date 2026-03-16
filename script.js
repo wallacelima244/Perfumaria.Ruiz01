@@ -140,7 +140,7 @@ const products = [
     image: "la.bomba.jpeg",
     tag: "Importado Feminino",
     description: "Aroma leve e marcante",
-    featured: false,
+    featured: true,
     hidden: false,
   },
   {
@@ -152,7 +152,7 @@ const products = [
     image: "chanel.fem.jpeg",
     tag: "Importado Feminino",
     description: "Fragrância Marcante.",
-    featured: true
+    featured: false
   },
   {
     id: 13,
@@ -163,7 +163,7 @@ const products = [
     image: "good.girl.blush.jpeg",
     tag: "Premium",
     description: "sofisticado muito famoso.",
-    featured: false
+    featured: true
   },
   {
     id: 14,
@@ -174,7 +174,7 @@ const products = [
     image: "dolcegabbana.jpeg",
     tag: "Importado Feminino",
     description: "Leve, refrescante e elegante para o dia a dia.",
-    featured: false
+    featured: true
   },
   {
     id: 15,
@@ -372,7 +372,7 @@ const products = [
     image: "animale.jpeg",
     tag: "Luxo",
     description: "Sofisticado, refinado e extremamente versátil.",
-    featured: true
+    featured: false
   },
   {
     id: 33,
@@ -383,7 +383,7 @@ const products = [
     image: "paco.rabenne.one.million.jpeg",
     tag: "Importado Masculino",
     description: "Moderno, vibrante e cheio de energia.",
-    featured: false
+    featured: true
   },
   {
     id: 34,
@@ -427,7 +427,7 @@ const products = [
     image: "prada.masc.jpeg",
     tag: "Importado Masculino",
     description: "Fresco, sofisticado e muito agradável.",
-    featured: true
+    featured: false
   },
   {
     id: 38,
@@ -471,7 +471,7 @@ const products = [
   image: "chhc.jpeg",
   tag: "Best Seller",
   description: "Perfume marcante, sedutor e muito procurado.",
-  featured: true
+  featured: false
 },
 {
   id: 42,
@@ -493,7 +493,7 @@ const products = [
   image: "invictus.jpeg",
   tag: "Premium",
   description: "Aroma sofisticado, refinado e noturno.",
-  featured: false
+  featured: true
 },
 {
   id: 44,
@@ -548,7 +548,7 @@ const products = [
   image: "212.vip.black.jpeg",
   tag: "Premium",
   description: "Cheiro sofisticado, moderno e muito elogiado.",
-  featured: false
+  featured: true
 },
 
 {
@@ -604,7 +604,7 @@ const products = [
     image: "l.elixir.jpeg",
     tag: "Importado Feminino",
     description: " envolvente e cheia de personalidade.",
-    featured: false
+    featured: true
   },    
 ];
 
