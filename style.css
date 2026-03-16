@@ -1097,4 +1097,47 @@ transition:0.25s;
 
 .footer-links a:hover{
 background:rgba(212,175,55,0.1);
+}.hero-subtitle{
+margin-top:10px;
+font-size:18px;
+color:var(--gold-soft);
+font-weight:600;
+}
+
+.hero-benefits{
+margin-top:18px;
+display:flex;
+flex-direction:column;
+gap:8px;
+font-size:16px;
+color:#d7d7d7;
+}
+
+.hero-benefits li{
+list-style:none;
+}.hero-title{
+font-size: clamp(42px,5vw,64px);
+font-weight:900;
+line-height:1.05;
+}
+
+.hero-subtitle{
+margin-top:12px;
+font-size:20px;
+font-weight:700;
+color:var(--gold-soft);
+}
+
+.hero-benefits{
+margin-top:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+font-size:18px;
+font-weight:600;
+color:#e5e5e5;
+}
+
+.hero-benefits li{
+list-style:none;
 }
