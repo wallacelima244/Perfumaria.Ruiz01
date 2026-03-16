@@ -4,9 +4,11 @@ const categories = [
   "Todos",
   "Importados Femininos",
   "Importados Masculinos",
-  "Em Breve",
-  "Em Breve"
+  // "Arabes Masculinos"
+  // "Arabes Femininos"
+  // "Em Breve"
 ];
+
 
 const products = [
   {
@@ -224,22 +226,11 @@ const products = [
     volume: "100 ml",
     category: "Importados Femininos",
     price: 1246.70,
-    image: "splendide.jpeg",
+    image: "spledide.jpeg",
     tag: "Premium",
     description: "Presença luxuosa com assinatura elegante.",
     featured: false,
     hidden: false,
-  },
-  {
-    id: 20,
-    name: "Chanel Chance Eau Tendre",
-    volume: "100 ml",
-    category: "Importados Femininos",
-    price: 489.0,
-    image: "img/perfume-20.jpg",
-    tag: "Luxo",
-    description: "Fragrância refinada, delicada e sofisticada.",
-    featured: false
   },
   {
     id: 21,
@@ -559,28 +550,62 @@ const products = [
   description: "Cheiro sofisticado, moderno e muito elogiado.",
   featured: false
 },
+
 {
-  id: 49,
-  name: "Y Yves Saint Laurent Eau de Parfum",
-  volume: "100 ml",
-  category: "Importados Masculinos",
-  price: 519.0,
-  image: "img/perfume-48.jpg",
-  tag: "Premium",
-  description: "Cheiro sofisticado, moderno e muito elogiado.",
-  featured: false
-},
-{
-  id: 50,
-  name: "Y Yves Saint Laurent Eau de Parfum",
-  volume: "100 ml",
-  category: "Importados Masculinos",
-  price: 519.0,
-  image: "img/perfume-48.jpg",
-  tag: "Premium",
-  description: "Cheiro sofisticado, moderno e muito elogiado.",
-  featured: false
-}  
+    id: 51,
+    name: "Olympea de Paco Rabanne Eau de Parfum",
+    volume: "80 ml",
+    category: "Importados Femininos",
+    price: 596.70,
+    image: "olympea.jpeg",
+    tag: "Importado Feminino",
+    description: "Alto padrão e marca presença",
+    featured: false
+  },
+  {
+    id: 52,
+    name: "Good Girl de Carolina Herrera Eau de Parfum",
+    volume: "80 ml",
+    category: "Importados Femininos",
+    price:689.00,
+    image: "good.girl.jpeg",
+    tag: "Importado Feminino",
+    description: "elegância e frescor.",
+    featured: false
+  }, 
+  {
+    id: 53,
+    name: "Scandal de Jean Paul Gaultier Feminino Eau de Parfum",
+    volume: "80 ml",
+    category: "Importados Femininos",
+    price: 708.50,
+    image: "scandal.jpeg",
+    tag: "Importado Feminino",
+    description: "sensualidade e elegância.",
+    featured: false
+  },
+  {
+    id: 54,
+    name: "La Vie Belle Lancome Eau Parfum",
+    volume: "100 ml",
+    category: "Importados Femininos",
+    price: 713.70,
+    image: "la.belle.jpeg",
+    tag: "Importado Feminino",
+    description: "Clássico feminino",
+    featured: false
+  },
+  {
+    id: 56,
+    name: "La Vie Est Belle L'Elixir lancome",
+    volume: "100 ml",
+    category: "Importados Femininos",
+    price: 713.70,
+    image: "l.elixir.jpeg",
+    tag: "Importado Feminino",
+    description: " envolvente e cheia de personalidade.",
+    featured: false
+  },    
 ];
 
 let selectedCategory = "Todos";
