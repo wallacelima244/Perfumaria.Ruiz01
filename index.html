@@ -37,18 +37,17 @@
       </a>
 
       <div class="desktop-actions">
-        <a href="#mais-vendidos" class="nav-link">Mais vendidos</a>
-        <a href="#importados-masculinos" class="nav-link">Importados Masculino</a>
-        <a href="#importados-femininos" class="nav-link">Importados Feminino</a>
-        <a href="#arabes-masculinos" class="nav-link">Árabes Masculinos</a>
-        <a href="#arabes-femininos" class="nav-link">Árabes Femininos</a>
-
-        <button class="cart-top-btn" id="openCartBtn">
-          <i class="fa-solid fa-bag-shopping"></i>
-          <span>Carrinho</span>
-          <span id="cartCountTop">0</span>
-        </button>
-      </div>
+  <a href="#mais-vendidos" class="nav-link">Mais vendidos</a>
+  <a href="#importados-masculinos" class="nav-link">Importados Masculino</a>
+  <a href="#importados-femininos" class="nav-link">Importados Feminino</a>
+  <a href="#arabes-masculinos" class="nav-link">Árabes Masculinos</a>
+  <a href="#arabes-femininos" class="nav-link">Árabes Femininos</a>
+</div>
+      <button class="cart-top-btn" id="openCartBtn">
+  <i class="fa-solid fa-bag-shopping"></i>
+  <span>Carrinho</span>
+  <span id="cartCountTop">0</span>
+</button>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
         <i class="fa-solid fa-bars"></i>
@@ -88,13 +87,7 @@
 
         <div class="hero-actions">
           <a href="#catalogo" class="btn btn-gold">Ver catálogo</a>
-          <a
-            href="https://wa.me/5511972480984?text=Ol%C3%A1%21%20Gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20perfumes%20dispon%C3%ADveis."
-            target="_blank"
-            class="btn btn-outline"
-          >
-            Falar no WhatsApp
-          </a>
+          
         </div>
       </div>
 
@@ -233,7 +226,11 @@
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
-
+<div class="continue-shopping">
+  <button onclick="closeCart()" class="continue-btn">
+    Continuar comprando
+  </button>
+</div>
     <div class="cart-items" id="cartItems">
       <p class="empty-cart">Nenhum item adicionado ainda.</p>
     </div>
@@ -285,19 +282,24 @@
         <input type="text" id="customerCep" placeholder="Seu CEP" value="" required />
       </div>
 
-      <div class="form-group">
-        <label for="paymentMethod">Pagamento</label>
-        <select id="paymentMethod">
-          <option>Pix</option>
-          <option>Dinheiro</option>
-          <option>Cartão de crédito em 1x</option>
-          <option>Cartão de crédito em 2x</option>
-          <option>Cartão de crédito em 3x</option>
-          <option>Cartão de crédito em 4x</option>
-          <option>Cartão de crédito em 5x</option>
-        </select>
-      </div>
+     <div class="form-group">
+  <label for="paymentMethod">Pagamento</label>
+
+  <div class="custom-select" id="paymentSelect">
+    <div class="select-selected">Pix</div>
+
+    <div class="select-options">
+      <div data-value="Pix">Pix</div>
+      <div data-value="Dinheiro">Dinheiro</div>
+      <div data-value="Cartão de crédito em 1x">Cartão de crédito em 1x</div>
+      <div data-value="Cartão de crédito em 2x">Cartão de crédito em 2x</div>
+      <div data-value="Cartão de crédito em 3x">Cartão de crédito em 3x</div>
+      <div data-value="Cartão de crédito em 4x">Cartão de crédito em 4x</div>
+      <div data-value="Cartão de crédito em 5x">Cartão de crédito em 5x</div>
     </div>
+  </div>
+
+</div> <!-- 👈 FALTAVA ISSO -->
 
     <div class="cart-footer">
       <div class="cart-total">

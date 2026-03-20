@@ -1157,4 +1157,115 @@ list-style:none;
   color: #777;
   font-size: 13px;
   line-height: 1.2;
+}select {
+  color: #fff;
+  background: #101010;
+  border: 1px solid rgba(212,175,55,0.25);
+}
+
+select option {
+  background: #0b0b0b;
+  color: #fff;
+}.custom-select {
+  position: relative;
+  cursor: pointer;
+}
+
+.select-selected {
+  height: 46px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(212,175,55,0.25);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.select-selected::after {
+  content: "▼";
+  font-size: 12px;
+  color: #d4af37;
+}
+
+.select-options {
+  position: absolute;
+  width: 100%;
+  top: 52px;
+  left: 0;
+  background: #0b0b0b;
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 14px;
+  overflow: hidden;
+  display: none;
+  z-index: 999;
+}
+
+.select-options div {
+  padding: 12px;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.select-options div:hover {
+  background: rgba(212,175,55,0.1);
+}
+
+.custom-select.active .select-options {
+  display: block;
+}/* CORREÇÃO VISUAL GLOBAL */
+
+.product-card,
+.form-group input,
+.select-selected {
+  color: #fff !important;
+}
+
+/* melhora contraste dos inputs */
+.form-group input {
+  background: rgba(255,255,255,0.08);
+}
+
+/* melhora dropdown */
+.select-selected {
+  background: rgba(255,255,255,0.08);
+}
+
+/* opções do select */
+.select-options div {
+  color: #fff;
+  background: #0b0b0b;
+}
+
+/* HOVER MAIS VISÍVEL */
+.select-options div:hover {
+  background: rgba(212,175,55,0.2);
+}.continue-shopping{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.continue-btn{
+  width: 100%;
+  max-width: 260px;
+  height: 46px;
+
+  border-radius: 999px;
+  border: none;
+
+  background: linear-gradient(135deg, #d4af37, #f1d487);
+  color: #000;
+
+  font-weight: 800;
+  font-size: 14px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.continue-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(212,175,55,0.5);
 }
