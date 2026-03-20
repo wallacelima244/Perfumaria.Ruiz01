@@ -113,32 +113,7 @@ const products = [
     featured: false,
     hidden: false,
   },
-  {
-    id: 9,
-    name: "Em Breve",
-    volume: "00 ml",
-    category: "Árabes Femininos",
-    pricePix: 765.70,
-    priceCard: 825.70,
-    image: "em.breve.jpeg",
-    tag: "Novidade em Breve",
-    description: "Novidade em Breve.",
-    featured: false,
-    hidden: false,
-  },
-  {
-    id: 10,
-    name: "Em Breve",
-    volume: "00 ml",
-    category: "Árabes Femininos",
-    pricePix: 765.70,
-    priceCard: 825.70,
-    image: "em.breve.jpeg",
-    tag: "Novidade em Breve",
-    description: "Novidade em Breve.",
-    featured: false,
-    hidden: false,
-  },
+  
   {
     id: 11,
     name: "Carolina Herrera La Bomba",
@@ -1071,4 +1046,12 @@ document.addEventListener("click", (e) => {
   if (!paymentSelect.contains(e.target)) {
     paymentSelect.classList.remove("active");
   }
+});// Detectar scroll para adicionar classe no header
+window.addEventListener('scroll', function() {
+    const navbarWrapper = document.querySelector('.navbar-wrapper');
+    if (window.scrollY > 50) {
+        navbarWrapper.classList.add('scrolled');
+    } else {
+        navbarWrapper.classList.remove('scrolled');
+    }
 });
