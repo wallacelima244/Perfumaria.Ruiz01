@@ -1603,4 +1603,15 @@ body {
     border-radius: 12px !important;
     color: #fff !important;
     box-sizing: border-box !important;
+}/* ============================================================
+   MENU INTELIGENTE (ESCONDE AO DESCER, APARECE AO SUBIR)
+   ============================================================ */
+.navbar {
+    /* Adiciona uma transição suave para não sumir do nada */
+    transition: transform 0.35s ease-in-out, background 0.3s ease !important;
+}
+
+.navbar.nav-hidden {
+    /* Joga a barra 100% para cima (fora da tela) */
+    transform: translateY(-100%) !important; 
 }
