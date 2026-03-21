@@ -1420,4 +1420,30 @@ body {
 
 body {
   padding-top: 90px; /* Evita que o topo suma sob a navbar */
+}/* ============================================================
+   CORREÇÃO DO BURACO NO TOPO (DESKTOP)
+   ============================================================ */
+@media (min-width: 901px) {
+    /* Faz o grupo de botões crescer e preencher o buraco */
+    .desktop-actions {
+        display: flex !important;
+        flex: 1 !important; /* Ocupa todo o espaço disponível */
+        justify-content: space-evenly !important; /* Distribui os botões perfeitamente */
+        margin-left: 40px !important; /* Dá um respiro para não grudar na logo */
+        gap: 10px !important;
+    }
+
+    /* Faz cada botão esticar para ficar do mesmo tamanho */
+    .nav-link {
+        flex: 1 !important; 
+        text-align: center !important;
+        white-space: nowrap !important; /* Impede que o texto quebre para a linha de baixo */
+        padding: 0 10px !important;
+        font-size: 13px !important; /* Ajuste para caber tudo na mesma linha */
+    }
+    
+    /* Garante que o botão de carrinho inútil continue sumido */
+    .cart-top-btn, #openCartBtn {
+        display: none !important;
+    }
 }

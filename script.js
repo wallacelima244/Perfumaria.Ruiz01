@@ -35,13 +35,7 @@ let cart = [];
 let selectedPayment = "Pix";
 
 // Seletores
-const productsGrid = document.getElementById("productsGrid");
-const featuredGrid = document.getElementById("featuredGrid");
-const cartItemsContainer = document.getElementById("cartItems");
-const cartTotalText = document.getElementById("cartTotal");
-const cartCountTop = document.getElementById("cartCountTop");
-const cartCountFloat = document.getElementById("cartCountFloat");
-const searchInput = document.getElementById("searchInput");
+const getEl = (id) => document.getElementById(id);
 
 // Utilitários
 function formatPrice(value) {
@@ -76,7 +70,7 @@ function createProductCard(product) {
 }
 
 // Lógica do Carrinho
-function addToCart(productId, type) {
+window.addToCart = function(productId, type) {
   const product = products.find(p => p.id === productId);
   const price = type === 'card' ? product.priceCard : product.pricePix;
   
@@ -94,10 +88,13 @@ function addToCart(productId, type) {
 }
 
 function renderCart() {
-  cartItemsContainer.innerHTML = "";
+  const container = getEl("cartItems");
+  if(!container) return;
+
+  container.innerHTML = "";
   if (cart.length === 0) {
-    cartItemsContainer.innerHTML = '<p class="empty-cart">Nenhum item adicionado ainda.</p>';
-    cartTotalText.innerText = "R$ 0,00";
+    container.innerHTML = '<p class="empty-cart">Nenhum item adicionado ainda.</p>';
+    getEl("cartTotal").innerText = "R$ 0,00";
     updateCounts(0);
     return;
   }
@@ -109,13 +106,16 @@ function renderCart() {
     total += item.selectedPrice * item.quantity;
     totalQty += item.quantity;
     
+    // NOME AMIGÁVEL NO CARRINHO
+    const labelAmigavel = item.paymentType === 'card' ? "5x s/ Juros" : "PIX";
+
     const div = document.createElement("div");
     div.className = "cart-item";
     div.innerHTML = `
       <img src="${item.image}" alt="${item.name}">
       <div class="cart-item-info">
         <h4>${item.name}</h4>
-        <p>${formatPrice(item.selectedPrice)} (${item.paymentType.toUpperCase()})</p>
+        <p>${formatPrice(item.selectedPrice)} (${labelAmigavel})</p>
         <div class="quantity-controls">
           <button onclick="changeQty('${item.cartId}', -1)">-</button>
           <span>${item.quantity}</span>
@@ -123,15 +123,15 @@ function renderCart() {
         </div>
       </div>
     `;
-    cartItemsContainer.appendChild(div);
+    container.appendChild(div);
   });
 
-  cartTotalText.innerText = formatPrice(total);
+  getEl("cartTotal").innerText = formatPrice(total);
   updateCounts(totalQty);
   updateCheckoutLink();
 }
 
-function changeQty(cartId, delta) {
+window.changeQty = function(cartId, delta) {
   const item = cart.find(i => i.cartId === cartId);
   if (item) {
     item.quantity += delta;
@@ -141,58 +141,51 @@ function changeQty(cartId, delta) {
 }
 
 function updateCounts(qty) {
-  cartCountTop.innerText = qty;
-  cartCountFloat.innerText = qty;
+  if(getEl("cartCountFloat")) getEl("cartCountFloat").innerText = qty;
 }
 
-// WhatsApp Link (MODELO PEDIDO REALIZADO)
-// Substitua a função updateCheckoutLink por esta:
+// MENSAGEM DO WHATSAPP COMPLETASSA
 function updateCheckoutLink() {
-  const checkoutBtn = document.getElementById("checkoutBtn");
+  const checkoutBtn = getEl("checkoutBtn");
+  if(!checkoutBtn) return;
   
-  // 1. Pegar dados dos campos (Garante que não fiquem vazios)
-  const name = document.getElementById("customerName").value.trim() || "Não informado";
-  const phone = document.getElementById("customerPhone").value.trim() || "Não informado";
-  const address = document.getElementById("customerAddress").value.trim() || "Não informado";
-  const district = document.getElementById("customerDistrict").value.trim() || "---";
-  const city = document.getElementById("customerCity").value.trim() || "---";
-  const cep = document.getElementById("customerCep").value.trim() || "---";
-  const complement = document.getElementById("customerComplement").value.trim();
+  const name = getEl("customerName").value.trim() || "Não informado";
+  const phone = getEl("customerPhone").value.trim() || "Não informado";
+  const address = getEl("customerAddress").value.trim() || "Não informado";
+  const district = getEl("customerDistrict").value.trim() || "---";
+  const city = getEl("customerCity").value.trim() || "---";
+  const cep = getEl("customerCep").value.trim() || "---";
+  const complement = getEl("customerComplement").value.trim();
 
-  // 2. Montar a lista de produtos (Loop corrigido)
   let productLines = "";
   cart.forEach(item => {
-    // Identifica qual botão o cliente clicou (PIX ou CARD)
     const labelPagamento = item.paymentType === 'card' ? "(5x s/ Juros)" : "(PIX)";
     const subtotal = item.selectedPrice * item.quantity;
     
-    // Concatena cada produto em uma nova linha (%0A)
-    productLines += `Produto: * ${item.name} ${labelPagamento} (${item.quantity}x) — ${formatPrice(subtotal)}%0A`;
+    productLines += `Produto: * ${item.name} ${labelPagamento} (${item.quantity}x) — ${formatPrice(subtotal)}\n`;
   });
 
-  const total = cartTotalText.innerText;
+  const total = getEl("cartTotal").innerText;
 
-  // 3. Montar a mensagem completa exatamente no seu modelo
-  let message = `*Pedido Realizado*%0A%0A`;
-  message += `${productLines}%0A`; // Aqui entram todos os produtos listados acima
-  message += `*Total: ${total}*%0A%0A`;
-  message += `*Dados do Cliente*%0A`;
-  message += `Nome: ${name}%0A`;
-  message += `Telefone: ${phone}%0A`;
-  message += `Endereço: ${address}${complement ? ' (' + complement + ')' : ''}%0A`;
-  message += `Bairro: ${district}%0A`;
-  message += `Cidade: ${city}%0A`;
-  message += `CEP: ${cep}%0A%0A`;
-  message += `*Pagamento:* ${selectedPayment}%0A%0A`;
-  message += `*Prazo de Entrega:* 3 a 5 dias após a confirmação do pagamento.%0A%0A`;
-  message += `*Confirmação do Pedido:*%0A`;
-  message += `Para confirmar o pedido, é necessário o pagamento de no mínimo 50% do valor antecipado via Pix ou cartão de crédito em até 5x s/ Juros.%0A%0A`;
-  message += `Após a confirmação do pagamento, seu perfume será reservado e encomendado exclusivamente para você.%0A%0A`;
-  message += `Pedimos que, após o pagamento, envie o comprovante neste WhatsApp para confirmação do pedido. O valor restante poderá ser pago na entrega do produto.%0A%0A`;
-  message += `Agradecemos pela preferência!%0A%0A`;
+  let message = `*Pedido Realizado*\n\n`;
+  message += `${productLines}\n`;
+  message += `*Total: ${total}*\n\n`;
+  message += `*Dados do Cliente*\n`;
+  message += `Nome: ${name}\n`;
+  message += `Telefone: ${phone}\n`;
+  message += `Endereço: ${address}${complement ? ' (' + complement + ')' : ''}\n`;
+  message += `Bairro: ${district}\n`;
+  message += `Cidade: ${city}\n`;
+  message += `CEP: ${cep}\n\n`;
+  message += `*Pagamento:* ${selectedPayment}\n\n`;
+  message += `*Prazo de Entrega:* 3 a 5 dias após a confirmação do pagamento.\n\n`;
+  message += `*Confirmação do Pedido:*\n`;
+  message += `Para confirmar o pedido, é necessário o pagamento de no mínimo 50% do valor antecipado via Pix ou cartão de crédito em até 5x s/ Juros.\n\n`;
+  message += `Após a confirmação do pagamento, seu perfume será reservado e encomendado exclusivamente para você.\n\n`;
+  message += `Pedimos que, após o pagamento, envie o comprovante neste WhatsApp para confirmação do pedido. O valor restante poderá ser pago na entrega do produto.\n\n`;
+  message += `Agradecemos pela preferência!\n\n`;
   message += `*Rodrigues Perfums*`;
 
-  // 4. Aplicar o link ao botão de finalizar
   checkoutBtn.onclick = (e) => {
     e.preventDefault();
     if (cart.length === 0) {
@@ -203,16 +196,16 @@ function updateCheckoutLink() {
       alert("Por favor, preencha seu Nome e Endereço para entrega.");
       return;
     }
-    // O encodeURI limpa caracteres que podem quebrar o link
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    // EncodeURIComponent formata a mensagem pro WhatsApp entender os parágrafos
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
   };
 }
 
 // Filtros e Categorias
 function renderProducts() {
-  const term = searchInput.value.toLowerCase();
+  const term = getEl("searchInput") ? getEl("searchInput").value.toLowerCase() : "";
   const filtered = products.filter(p => p.name.toLowerCase().includes(term) && (selectedCategory === "Todos" || p.category === selectedCategory));
-  productsGrid.innerHTML = filtered.map(createProductCard).join("");
+  if(getEl("productsGrid")) getEl("productsGrid").innerHTML = filtered.map(createProductCard).join("");
 }
 
 function renderStaticSections() {
@@ -225,13 +218,14 @@ function renderStaticSections() {
   ];
 
   grids.forEach(g => {
-    const el = document.getElementById(g.id);
+    const el = getEl(g.id);
     if (el) el.innerHTML = products.filter(g.filter).map(createProductCard).join("");
   });
 }
 
 function renderCategoriesMenu() {
-  const container = document.getElementById("categories");
+  const container = getEl("categories");
+  if(!container) return;
   const cats = ["Todos", "Importados Femininos", "Importados Masculinos", "Árabes Masculinos", "Árabes Femininos"];
   container.innerHTML = cats.map(c => `<button class="category-btn ${c === selectedCategory ? 'active' : ''}" onclick="filterCat('${c}')">${c}</button>`).join("");
 }
@@ -243,24 +237,8 @@ window.filterCat = (cat) => {
 };
 
 // UI Handlers
-function openCart() { document.getElementById("cartSidebar").classList.add("active"); document.getElementById("cartOverlay").classList.add("active"); }
-function closeCart() { document.getElementById("cartSidebar").classList.remove("active"); document.getElementById("cartOverlay").classList.remove("active"); }
-
-// Select de Pagamento
-const paymentSelect = document.getElementById("paymentSelect");
-if (paymentSelect) {
-  const selected = paymentSelect.querySelector(".select-selected");
-  const options = paymentSelect.querySelector(".select-options");
-  selected.onclick = () => paymentSelect.classList.toggle("active");
-  options.querySelectorAll("div").forEach(opt => {
-    opt.onclick = () => {
-      selected.innerText = opt.innerText;
-      selectedPayment = opt.dataset.value;
-      paymentSelect.classList.remove("active");
-      updateCheckoutLink();
-    };
-  });
-}
+window.openCart = function() { getEl("cartSidebar").classList.add("active"); getEl("cartOverlay").classList.add("active"); }
+window.closeCart = function() { getEl("cartSidebar").classList.remove("active"); getEl("cartOverlay").classList.remove("active"); }
 
 // Inicialização
 document.addEventListener("DOMContentLoaded", () => {
@@ -268,14 +246,32 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   renderCategoriesMenu();
   
-  document.getElementById("openCartBtn").onclick = openCart;
-  document.getElementById("floatingCartBtn").onclick = openCart;
-  document.getElementById("closeCartBtn").onclick = closeCart;
-  document.getElementById("cartOverlay").onclick = closeCart;
-  document.getElementById("searchInput").oninput = renderProducts;
-  document.getElementById("menuToggle").onclick = () => document.getElementById("mobileMenu").classList.toggle("active");
+  // Botões de interface
+  if(getEl("floatingCartBtn")) getEl("floatingCartBtn").onclick = openCart;
+  if(getEl("closeCartBtn")) getEl("closeCartBtn").onclick = closeCart;
+  if(getEl("cartOverlay")) getEl("cartOverlay").onclick = closeCart;
+  if(getEl("searchInput")) getEl("searchInput").oninput = renderProducts;
+  if(getEl("menuToggle")) getEl("menuToggle").onclick = () => getEl("mobileMenu").classList.toggle("active");
   
+  // Custom Select Pagamento
+  const paymentSelect = getEl("paymentSelect");
+  if (paymentSelect) {
+    const selected = paymentSelect.querySelector(".select-selected");
+    const options = paymentSelect.querySelector(".select-options");
+    selected.onclick = () => paymentSelect.classList.toggle("active");
+    options.querySelectorAll("div").forEach(opt => {
+      opt.onclick = () => {
+        selected.innerText = opt.innerText;
+        selectedPayment = opt.dataset.value;
+        paymentSelect.classList.remove("active");
+        updateCheckoutLink();
+      };
+    });
+  }
+
+  // Inputs do formulário
   ["customerName", "customerPhone", "customerAddress", "customerDistrict", "customerCity", "customerCep", "customerComplement"].forEach(id => {
-    document.getElementById(id).addEventListener("input", updateCheckoutLink);
+    const input = getEl(id);
+    if(input) input.addEventListener("input", updateCheckoutLink);
   });
 });
