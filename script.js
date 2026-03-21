@@ -246,14 +246,41 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   renderCategoriesMenu();
   
-  // Botões de interface
+ // Botões de interface
   if(getEl("floatingCartBtn")) getEl("floatingCartBtn").onclick = openCart;
   if(getEl("closeCartBtn")) getEl("closeCartBtn").onclick = closeCart;
   if(getEl("cartOverlay")) getEl("cartOverlay").onclick = closeCart;
   if(getEl("searchInput")) getEl("searchInput").oninput = renderProducts;
-  if(getEl("menuToggle")) getEl("menuToggle").onclick = () => getEl("mobileMenu").classList.toggle("active");
-  
-  // Custom Select Pagamento
+
+  // ==========================================
+  // CONTROLE DO MENU MOBILE (SEM BUGS)
+  // ==========================================
+  const menuToggleBtn = getEl("menuToggle");
+  const mobileMenuDiv = getEl("mobileMenu");
+
+  // 1. Abrir/Fechar ao clicar no hambúrguer
+  if (menuToggleBtn && mobileMenuDiv) {
+    menuToggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // Evita que o clique vaze pro site
+      mobileMenuDiv.classList.toggle("active");
+    });
+  }
+
+  // 2. Fechar NA HORA se rolar a tela (sem ficar reaparecendo)
+  window.addEventListener("scroll", () => {
+    if (mobileMenuDiv && mobileMenuDiv.classList.contains("active")) {
+      mobileMenuDiv.classList.remove("active");
+    }
+  });
+
+  // 3. Fechar quando clicar em um link (para a gaveta subir)
+  document.querySelectorAll(".mobile-menu-link").forEach(link => {
+    link.addEventListener("click", () => {
+      if (mobileMenuDiv) mobileMenuDiv.classList.remove("active");
+    });
+  });
+
+  // Custom Select Pagamento (Mantendo o select do carrinho funcionando)
   const paymentSelect = getEl("paymentSelect");
   if (paymentSelect) {
     const selected = paymentSelect.querySelector(".select-selected");
@@ -274,21 +301,5 @@ document.addEventListener("DOMContentLoaded", () => {
     const input = getEl(id);
     if(input) input.addEventListener("input", updateCheckoutLink);
   });
-});// ==========================================
-// FUNÇÕES EXTRAS DO MENU MOBILE
-// ==========================================
 
-// 1. Fecha o menu automaticamente quando a pessoa rolar a tela
-window.addEventListener("scroll", () => {
-  const menu = document.getElementById("mobileMenu");
-  if (menu && menu.classList.contains("active")) {
-    menu.classList.remove("active");
-  }
-});
-
-// 2. Fecha o menu quando a pessoa clica em uma das categorias dele
-document.querySelectorAll(".mobile-menu-link").forEach(link => {
-  link.addEventListener("click", () => {
-    document.getElementById("mobileMenu").classList.remove("active");
-  });
-});
+}); // <-- ESSA É A ÚLTIMA LINHA DO SEU SCRIPT.JS (Não apague ela!)
