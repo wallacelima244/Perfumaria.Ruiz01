@@ -308,7 +308,7 @@ const products = [
     category: "Árabes Masculinos",
     pricePix: 206.70,
     priceCard: 266.70,
-    image: "pather.original.jpeg",
+    image: "https://myperfumes.co.uk/cdn/shop/files/panther-pour-homme-1.webp?v=1693774117&width=1946",
     tag: "Destaque",
     description: "Fragrância intensa, envolvente e cheia de personalidade.",
     featured: false,
