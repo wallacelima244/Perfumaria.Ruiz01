@@ -308,7 +308,7 @@ const products = [
     category: "Árabes Masculinos",
     pricePix: 206.70,
     priceCard: 266.70,
-    image: "panther.jpeg",
+    image: "pather.original.jpeg",
     tag: "Destaque",
     description: "Fragrância intensa, envolvente e cheia de personalidade.",
     featured: false,
