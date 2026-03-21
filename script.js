@@ -274,4 +274,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const input = getEl(id);
     if(input) input.addEventListener("input", updateCheckoutLink);
   });
+});// ==========================================
+// FUNÇÕES EXTRAS DO MENU MOBILE
+// ==========================================
+
+// 1. Fecha o menu automaticamente quando a pessoa rolar a tela
+window.addEventListener("scroll", () => {
+  const menu = document.getElementById("mobileMenu");
+  if (menu && menu.classList.contains("active")) {
+    menu.classList.remove("active");
+  }
+});
+
+// 2. Fecha o menu quando a pessoa clica em uma das categorias dele
+document.querySelectorAll(".mobile-menu-link").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("mobileMenu").classList.remove("active");
+  });
 });

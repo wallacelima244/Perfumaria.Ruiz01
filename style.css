@@ -1446,4 +1446,39 @@ body {
     .cart-top-btn, #openCartBtn {
         display: none !important;
     }
+}/* ============================================================
+   CORREÇÃO DO MENU MOBILE (VISUAL E ALINHAMENTO)
+   ============================================================ */
+.mobile-menu {
+    position: fixed !important;
+    top: 85px !important; /* Cola certinho embaixo da navbar (que tem 85px) */
+    left: 0 !important;
+    width: 100% !important;
+    background: #070707 !important; /* Fundo escuro sólido para tapar o texto atrás */
+    padding: 20px 5% 30px !important;
+    border-bottom: 1px solid var(--gold-border) !important;
+    border-radius: 0 0 24px 24px !important; /* Arredonda só embaixo */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.9) !important; /* Sombra forte pra destacar */
+    z-index: 1999 !important; /* Fica logo atrás da navbar (2000) */
+    display: none !important; /* Padrão: escondido */
+}
+
+/* Quando vc clica no botão e ele ganha a classe active */
+.mobile-menu.active {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+}
+
+/* Deixa os botões alinhados e bonitos */
+.mobile-menu-link {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 16px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid var(--gold-border) !important;
+    border-radius: 14px !important;
+    font-size: 16px !important;
+    margin: 0 !important;
 }
