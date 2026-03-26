@@ -19,7 +19,7 @@ const products = [
     name: "Lattafa Fakhar Rose",
     volume: "100 ml",
     category: "Árabes Femininos",
-    pricePix: 280.00,
+    pricePix: 289.00,
     priceCard: 319.00,
     image: "rose.f.jpeg",
     tag: "Árabe Feminino Premium",
